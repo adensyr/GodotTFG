@@ -14,8 +14,7 @@ var seed_used: int
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	seed_used = randi()
-	#rng.seed = seed_used
-	rng.seed = 2528007925
+	rng.seed = seed_used
 	generate()
 
 func generate():
