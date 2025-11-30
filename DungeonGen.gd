@@ -1,20 +1,25 @@
 extends Node2D
 
+@export var initial_room: PackedScene
 @export var rooms: Array[PackedScene]
 @export var dead_ends: Array[PackedScene]
-@export var max_rooms:= 10
+@export var max_rooms: int
 
 var placed_rooms: Array = []
 var total_rooms: Array = []
 var current_rooms:= 1
+var rng:= RandomNumberGenerator.new()
+var seed_used: int
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	randomize()
+	seed_used = randi()
+	#rng.seed = seed_used
+	rng.seed = 2528007925
 	generate()
 
 func generate():
-	var start_room = rooms.pick_random().instantiate()
+	var start_room = initial_room.instantiate()
 	add_child(start_room)
 	start_room.position = Vector2.ZERO
 	placed_rooms.append(start_room)
@@ -26,7 +31,7 @@ func generate():
 		try_add_room(dead_ends)
 
 func try_add_room(multi_rooms: Array):
-	var base_room = placed_rooms.pick_random()
+	var base_room = placed_rooms.get(rng.randi_range(0, placed_rooms.size()-1))
 	var base_conections = base_room.get_node("Conexiones").get_children()
 	
 	if base_conections.is_empty():
@@ -37,10 +42,10 @@ func try_add_room(multi_rooms: Array):
 						break
 		return
 	
-	var base_conn = base_conections.pick_random()
+	var base_conn = base_conections.get(rng.randi_range(0, base_conections.size()-1))
 	var dir = base_conn.name.to_lower()
 	
-	var new_room = multi_rooms.pick_random().instantiate()
+	var new_room = multi_rooms.get(rng.randi_range(0, multi_rooms.size()-1)).instantiate()
 	var new_connections = new_room.get_node("Conexiones").get_children()
 	
 	var opposite_name = get_opposite(dir)

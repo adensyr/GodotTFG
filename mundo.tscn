@@ -11,8 +11,10 @@
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
+initial_room = ExtResource("2_5ckkb")
 rooms = Array[PackedScene]([ExtResource("2_5ckkb"), ExtResource("3_2hh7m"), ExtResource("4_t8jxu")])
 dead_ends = Array[PackedScene]([ExtResource("4_t8jxu"), ExtResource("6_pij3u"), ExtResource("7_pfhxm"), ExtResource("8_pij3u")])
+max_rooms = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(0.1, 0.1)
