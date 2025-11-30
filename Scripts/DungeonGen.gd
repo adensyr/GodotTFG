@@ -96,6 +96,11 @@ func overlaps(room: Node2D) -> bool:
 			return true
 	return false
 
+func _on_camera_area_body_entered(body, room):
+	if body.name == "Player":
+		var cam = get_viewport().get_camera_2d()
+		cam.move(room)
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass

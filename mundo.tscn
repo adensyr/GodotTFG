@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=12 format=3 uid="uid://ctdooan1sbcps"]
 
-[ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://DungeonGen.gd" id="1_6ba58"]
+[ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://4f4q12mqcr2t" path="res://levels/Level_0.scn" id="2_5ckkb"]
 [ext_resource type="PackedScene" uid="uid://o4kirqi1o3pf" path="res://levels/Level_1.scn" id="3_2hh7m"]
 [ext_resource type="PackedScene" uid="uid://sy8r8cqi7rnp" path="res://levels/Level_2.scn" id="4_t8jxu"]
@@ -8,6 +8,12 @@
 [ext_resource type="PackedScene" uid="uid://b2usgpbwx8txi" path="res://levels/Level_5.scn" id="7_pfhxm"]
 [ext_resource type="PackedScene" uid="uid://bbdyoai822k48" path="res://levels/Level_6.scn" id="8_pij3u"]
 [ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://player.tscn" id="9_pfhxm"]
+[ext_resource type="Script" uid="uid://cd5gh6sv8lkbc" path="res://Scripts/camera_2d.gd" id="9_pij3u"]
+
+[sub_resource type="QuadMesh" id="QuadMesh_t8jxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pfhxm"]
+size = Vector2(0.8826375, 0.9954953)
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
@@ -18,4 +24,20 @@ max_rooms = 10
 
 [node name="Player" parent="." instance=ExtResource("9_pfhxm")]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(1.26, 1.26)
+position_smoothing_enabled = true
+editor_draw_drag_margin = true
+script = ExtResource("9_pij3u")
+
+[node name="Testing floor" type="StaticBody2D" parent="."]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Testing floor"]
+position = Vector2(-30.249992, 69.00001)
+scale = Vector2(434.5, 27.75)
+mesh = SubResource("QuadMesh_t8jxu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Testing floor"]
+position = Vector2(-30.6875, 68.999985)
+scale = Vector2(491, 27.75)
+shape = SubResource("RectangleShape2D_pfhxm")
