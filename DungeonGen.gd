@@ -4,6 +4,7 @@ extends Node2D
 @export var dead_ends: Array[PackedScene]
 @export var max_rooms:= 10
 
+
 var placed_rooms: Array = []
 var total_rooms: Array = []
 var current_rooms:= 1
