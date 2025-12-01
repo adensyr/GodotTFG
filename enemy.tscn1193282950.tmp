@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://b1ai0fdnmufgc"]
+
+[ext_resource type="Script" uid="uid://deia0e415tcbt" path="res://Scripts/enemy.gd" id="1_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://Stickman Base.png" id="1_7k104"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
+size = Vector2(23, 57)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
+radius = 83.7929
+
+[node name="Enemy" type="CharacterBody2D"]
+script = ExtResource("1_4gyqm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.7254902, 0, 0, 1)
+texture = ExtResource("1_7k104")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3.5, 1.5)
+shape = SubResource("RectangleShape2D_7k104")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+
+[node name="DetectionRangeColision" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(-0.5, 1)
+shape = SubResource("CircleShape2D_4gyqm")
+
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_exited" from="DetectionRange" to="." method="_on_detection_range_body_exited"]
