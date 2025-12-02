@@ -23,6 +23,10 @@ version_control/autoload_on_startup=true
 
 enabled=PackedStringArray("res://addons/ldtk-importer/plugin.cfg")
 
+[layer_names]
+
+2d_render/layer_2="P_Attack"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
