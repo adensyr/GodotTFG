@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity()  * delta
 	else:
 		if detected:
-			velocity = position.direction_to(player.position) * SPEED
+			velocity = global_position.direction_to(player.global_position) * SPEED
 		else:
 			velocity = Vector2(0,0)
 	

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="The StickFather"
-run/main_scene="uid://ctdooan1sbcps"
+run/main_scene="uid://b614j5htprg2n"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="res://icon.svg"
 
