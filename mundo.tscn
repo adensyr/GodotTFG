@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=13 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://4f4q12mqcr2t" path="res://levels/Level_0.scn" id="2_5ckkb"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbdyoai822k48" path="res://levels/Level_6.scn" id="8_pij3u"]
 [ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://player.tscn" id="9_pfhxm"]
 [ext_resource type="Script" uid="uid://cd5gh6sv8lkbc" path="res://Scripts/camera_2d.gd" id="9_pij3u"]
+[ext_resource type="PackedScene" uid="uid://bjaiecdyli0oo" path="res://pause_menu.tscn" id="10_pij3u"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_t8jxu"]
 
@@ -22,13 +23,15 @@ rooms = Array[PackedScene]([ExtResource("2_5ckkb"), ExtResource("3_2hh7m"), ExtR
 dead_ends = Array[PackedScene]([ExtResource("4_t8jxu"), ExtResource("6_pij3u"), ExtResource("7_pfhxm"), ExtResource("8_pij3u")])
 max_rooms = 10
 
-[node name="Player" parent="." instance=ExtResource("9_pfhxm")]
-
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.26, 1.26)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 script = ExtResource("9_pij3u")
+
+[node name="PauseMenu" parent="Camera2D" instance=ExtResource("10_pij3u")]
+
+[node name="Player" parent="." instance=ExtResource("9_pfhxm")]
 
 [node name="Testing floor" type="StaticBody2D" parent="."]
 

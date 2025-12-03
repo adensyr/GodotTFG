@@ -1,0 +1,75 @@
+[gd_scene load_steps=6 format=3 uid="uid://bjaiecdyli0oo"]
+
+[ext_resource type="Script" uid="uid://clb807gpv462q" path="res://Scripts/pause_menu.gd" id="1_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
+bg_color = Color(0.6830772, 0.6830774, 0.6830771, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
+bg_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
+bg_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.68283576, 0.6083382, 0.60801023, 1)
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_hdmo1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2677903, 0.2677903, 0.2677903, 0.9607843)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 0
+offset_left = 336.0
+offset_top = 248.0
+offset_right = 824.0
+offset_bottom = 571.0
+theme_override_constants/separation = 50
+
+[node name="Play" type="Button" parent="ColorRect/VBoxContainer"]
+process_mode = 3
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_hdmo1")
+text = "Continuar partida"
+
+[node name="QuitMenu" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_nwcfo")
+text = "Salir al menú"
+
+[node name="Quit" type="Button" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_05uyy")
+text = "Salir del juego"
+
+[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+layout_mode = 0
+offset_left = 475.0
+offset_top = 74.0
+offset_right = 683.0
+offset_bottom = 188.0
+rotation = 0.034906585
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 0.88235295)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Pausa"
+editable = false
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/QuitMenu" to="." method="_on_quit_menu_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
