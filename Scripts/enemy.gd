@@ -33,9 +33,12 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 
 func get_hit():
 	PVs -= 1
-	inmune = true
-	await get_tree().create_timer(1.5).timeout
-	inmune = false
+	if PVs <= 0:
+		queue_free()
+	else:
+		inmune = true
+		await get_tree().create_timer(1.5).timeout
+		inmune = false
 
 
 func _on_hitbox_area_entered(area: Area2D) -> void:

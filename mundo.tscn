@@ -29,8 +29,6 @@ position_smoothing_enabled = true
 editor_draw_drag_margin = true
 script = ExtResource("9_pij3u")
 
-[node name="PauseMenu" parent="Camera2D" instance=ExtResource("10_pij3u")]
-
 [node name="Player" parent="." instance=ExtResource("9_pfhxm")]
 
 [node name="Testing floor" type="StaticBody2D" parent="."]
@@ -44,3 +42,5 @@ mesh = SubResource("QuadMesh_t8jxu")
 position = Vector2(-30.6875, 68.999985)
 scale = Vector2(491, 27.75)
 shape = SubResource("RectangleShape2D_pfhxm")
+
+[node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]

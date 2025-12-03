@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -350.0
 
 @onready var ani = $Sprite2D/AnimationPlayer
 
-var PVs := 3
+var PVs := 100
 var inmune := false
 
 
@@ -38,6 +38,10 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 
 func get_hit():
 	PVs -= 1
-	inmune = true
-	await get_tree().create_timer(2).timeout
-	inmune = false
+	if PVs <= 0:
+		velocity = Vector2(0,0)
+		get_tree().change_scene_to_file("res://DeathPanel.tscn")
+	else:
+		inmune = true
+		await get_tree().create_timer(2).timeout
+		inmune = false

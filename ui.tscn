@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://cvugogat7nl5a"]
+
+[node name="UI" type="CanvasLayer"]
+
+[node name="ColorRectR" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRectL" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
