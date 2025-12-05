@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bxb5p6hqiusoe"
-path="res://.godot/imported/Stickman Base.png-b35ea17421440ecadbf618ef698ed32d.ctex"
+uid="uid://dtkmfg5c5tfi6"
+path="res://.godot/imported/Enemigo Base.png-47ce54140e9552a4033e47055bdf3cf6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Stickman Base.png"
-dest_files=["res://.godot/imported/Stickman Base.png-b35ea17421440ecadbf618ef698ed32d.ctex"]
+source_file="res://textures/Enemigo Base.png"
+dest_files=["res://.godot/imported/Enemigo Base.png-47ce54140e9552a4033e47055bdf3cf6.ctex"]
 
 [params]
 

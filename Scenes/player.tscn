@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://c82wsv3p8cs5s"]
 
 [ext_resource type="Script" uid="uid://csbsfbimiljnq" path="res://Scripts/PlayerMovement.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://Stickman Base.png" id="2_onrkg"]
-[ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://Espada basica.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://textures/Stickman Base.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="3_i3pqv"]
 
 [sub_resource type="Animation" id="Animation_onrkg"]
 resource_name = "Attack"

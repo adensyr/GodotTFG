@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cjrfuhbyb7gxc"
-path="res://.godot/imported/Espada basica.png-2f5bc91e33d93b76e9cb1b3a665ca860.ctex"
+uid="uid://bxb5p6hqiusoe"
+path="res://.godot/imported/Stickman Base.png-cf37140ccd42696c7e3128428eaa516b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Espada basica.png"
-dest_files=["res://.godot/imported/Espada basica.png-2f5bc91e33d93b76e9cb1b3a665ca860.ctex"]
+source_file="res://textures/Stickman Base.png"
+dest_files=["res://.godot/imported/Stickman Base.png-cf37140ccd42696c7e3128428eaa516b.ctex"]
 
 [params]
 

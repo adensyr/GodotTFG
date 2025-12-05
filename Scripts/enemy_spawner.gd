@@ -1,6 +1,6 @@
 extends Area2D
 
-@onready var Enemy = load("res://enemy.tscn")
+@onready var Enemy = load("res://Scenes/enemy.tscn")
 var spawned := false
 
 func spawn(body):

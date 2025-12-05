@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://b1ai0fdnmufgc"]
 
 [ext_resource type="Script" uid="uid://deia0e415tcbt" path="res://Scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://Stickman Base.png" id="1_7k104"]
+[ext_resource type="Texture2D" uid="uid://dtkmfg5c5tfi6" path="res://textures/Enemigo Base.png" id="2_4gyqm"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
 size = Vector2(23, 57)
@@ -17,7 +17,7 @@ script = ExtResource("1_4gyqm")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 modulate = Color(0.7254902, 0, 0, 1)
-texture = ExtResource("1_7k104")
+texture = ExtResource("2_4gyqm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-3.5, 1.5)

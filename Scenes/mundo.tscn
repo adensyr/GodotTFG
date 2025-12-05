@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=14 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://4f4q12mqcr2t" path="res://levels/Level_0.scn" id="2_5ckkb"]
@@ -7,9 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://bhuodhys224k" path="res://levels/Level_4.scn" id="6_pij3u"]
 [ext_resource type="PackedScene" uid="uid://b2usgpbwx8txi" path="res://levels/Level_5.scn" id="7_pfhxm"]
 [ext_resource type="PackedScene" uid="uid://bbdyoai822k48" path="res://levels/Level_6.scn" id="8_pij3u"]
-[ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://player.tscn" id="9_pfhxm"]
+[ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://Scenes/player.tscn" id="9_pfhxm"]
 [ext_resource type="Script" uid="uid://cd5gh6sv8lkbc" path="res://Scripts/camera_2d.gd" id="9_pij3u"]
-[ext_resource type="PackedScene" uid="uid://bjaiecdyli0oo" path="res://pause_menu.tscn" id="10_pij3u"]
+[ext_resource type="PackedScene" uid="uid://bjaiecdyli0oo" path="res://Scenes/pause_menu.tscn" id="10_pij3u"]
+[ext_resource type="PackedScene" uid="uid://cvugogat7nl5a" path="res://Scenes/ui.tscn" id="11_0oi55"]
 
 [sub_resource type="QuadMesh" id="QuadMesh_t8jxu"]
 
@@ -42,5 +43,7 @@ mesh = SubResource("QuadMesh_t8jxu")
 position = Vector2(-30.6875, 68.999985)
 scale = Vector2(491, 27.75)
 shape = SubResource("RectangleShape2D_pfhxm")
+
+[node name="UI" parent="." instance=ExtResource("11_0oi55")]
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]

@@ -6,9 +6,8 @@ const JUMP_VELOCITY = -350.0
 
 @onready var ani = $Sprite2D/AnimationPlayer
 
-var PVs := 100
+var PVs := 4
 var inmune := false
-
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -40,8 +39,10 @@ func get_hit():
 	PVs -= 1
 	if PVs <= 0:
 		velocity = Vector2(0,0)
-		get_tree().change_scene_to_file("res://DeathPanel.tscn")
+		get_tree().change_scene_to_file("res://Scenes/DeathPanel.tscn")
 	else:
 		inmune = true
+		var life_array = get_parent().get_node("UI/ColorRectL/VBoxContainer").get_children()
+		life_array[PVs].get_node("AnimationPlayer").play("LosePV")
 		await get_tree().create_timer(2).timeout
 		inmune = false
