@@ -24,6 +24,7 @@ func generate():
 	add_child(start_room)
 	start_room.position = Vector2.ZERO
 	placed_rooms.append(start_room)
+	total_rooms.append(start_room)
 	
 	while current_rooms < max_rooms:
 		try_add_room(rooms)

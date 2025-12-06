@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dp3627i5ioqky" path="res://Scripts/camera_area.gd" id="1_amuw0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yxaxy"]
-size = Vector2(512, 512)
+size = Vector2(490, 490)
 
 [node name="CameraArea" type="Area2D"]
 script = ExtResource("1_amuw0")

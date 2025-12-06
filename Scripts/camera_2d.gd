@@ -12,7 +12,3 @@ func move(room: Node2D):
 
 func _physics_process(delta: float) -> void:
 	global_position = global_position.lerp(target_pos, delta*transition_speed)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
