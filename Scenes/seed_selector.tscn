@@ -1,0 +1,102 @@
+[gd_scene load_steps=2 format=3 uid="uid://bhaopel1d20mm"]
+
+[ext_resource type="Script" uid="uid://wsrgsl8j3jie" path="res://Scripts/seed_selector.gd" id="1_renra"]
+
+[node name="SeedSelector" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_renra")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.8235294, 0.7921569, 0.7882353, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.5
+offset_top = -262.0
+offset_right = 443.5
+offset_bottom = 262.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="Seed" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="SpinBox" type="SpinBox" parent="HBoxContainer/Seed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -106.0
+offset_top = 54.0
+offset_right = 124.0
+offset_bottom = 108.0
+grow_horizontal = 2
+grow_vertical = 2
+max_value = 4294967295.0
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/Seed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -140.0
+offset_top = -187.0
+offset_right = 138.0
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Insert your 
+seed:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="NoSeed" type="Button" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="HBoxContainer/NoSeed"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -170.75
+offset_top = -105.5
+offset_right = 170.75
+offset_bottom = 105.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/font_size = 50
+text = "Random
+seed"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="HBoxContainer/Seed" to="." method="_on_seed_pressed"]
+[connection signal="pressed" from="HBoxContainer/NoSeed" to="." method="_on_no_seed_pressed"]

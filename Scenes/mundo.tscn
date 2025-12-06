@@ -45,5 +45,6 @@ scale = Vector2(491, 27.75)
 shape = SubResource("RectangleShape2D_pfhxm")
 
 [node name="UI" parent="." instance=ExtResource("11_0oi55")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]

@@ -1,6 +1,10 @@
 extends CanvasLayer
 
-func _physics_process(delta: float) -> void:
+func _ready() -> void:
+	pass
+	#get_node("ColorRect/LineEdit").Text = get_parent().seed_used
+
+func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed("ui_cancel"):
 		get_tree().paused = not get_tree().paused
 		$ColorRect.visible = not $ColorRect.visible

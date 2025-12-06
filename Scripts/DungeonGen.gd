@@ -9,12 +9,14 @@ var placed_rooms: Array = []
 var total_rooms: Array = []
 var current_rooms:= 1
 var rng:= RandomNumberGenerator.new()
-var seed_used: int
+var seed_used
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	seed_used = randi()
+	if seed_used == null:
+		seed_used = randi()
 	rng.seed = seed_used
+	get_node("PauseMenu/ColorRect/LineEdit").set_text(str(seed_used))
 	generate()
 
 func generate():

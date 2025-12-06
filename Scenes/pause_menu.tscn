@@ -1,6 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bjaiecdyli0oo"]
+[gd_scene load_steps=7 format=3 uid="uid://bjaiecdyli0oo"]
 
 [ext_resource type="Script" uid="uid://clb807gpv462q" path="res://Scripts/pause_menu.gd" id="1_hdmo1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emv3i"]
+bg_color = Color(0.68235296, 0.60784316, 0.60784316, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdmo1"]
 bg_color = Color(0.6830772, 0.6830774, 0.6830771, 1)
@@ -11,8 +14,8 @@ bg_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05uyy"]
 bg_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
-bg_color = Color(0.68283576, 0.6083382, 0.60801023, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k0w1u"]
+bg_color = Color(0.68235296, 0.60784316, 0.60784316, 1)
 
 [node name="PauseMenu" type="CanvasLayer"]
 process_mode = 3
@@ -26,6 +29,24 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.26666668, 0.26666668, 0.26666668, 0.92156863)
+
+[node name="PausaLabel" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -125.0
+offset_top = 58.0
+offset_right = 125.5
+offset_bottom = 175.0
+grow_horizontal = 2
+rotation = 0.034906585
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxFlat_emv3i")
+text = "Pausa"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
 layout_mode = 0
@@ -57,17 +78,28 @@ theme_override_font_sizes/font_size = 50
 theme_override_styles/normal = SubResource("StyleBoxFlat_05uyy")
 text = "Salir del juego"
 
-[node name="TextEdit" type="TextEdit" parent="ColorRect"]
+[node name="SeedLabel" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 475.0
-offset_top = 74.0
-offset_right = 683.0
-offset_bottom = 188.0
-rotation = 0.034906585
-theme_override_colors/font_readonly_color = Color(0, 0, 0, 0.88235295)
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
-text = "Pausa"
+offset_left = 956.0
+offset_top = 214.0
+offset_right = 1066.0
+offset_bottom = 273.0
+theme_override_font_sizes/font_size = 20
+text = "Semilla del 
+mundo:"
+horizontal_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="ColorRect"]
+layout_mode = 0
+offset_left = 910.0
+offset_top = 289.00003
+offset_right = 1118.0
+offset_bottom = 352.00003
+rotation = -0.034906585
+theme_override_colors/font_uneditable_color = Color(0, 0, 0, 0.5019608)
+theme_override_font_sizes/font_size = 20
+theme_override_styles/read_only = SubResource("StyleBoxFlat_k0w1u")
+alignment = 1
 editable = false
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
