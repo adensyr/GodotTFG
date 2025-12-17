@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d3cu3u0fpijlh"]
+
+[node name="Conexiones" type="Node2D"]
+
+[node name="Right" type="Marker2D" parent="."]
+position = Vector2(256, 0)

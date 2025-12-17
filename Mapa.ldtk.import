@@ -1,0 +1,37 @@
+[remap]
+
+importer="ldtk.import"
+type="PackedScene"
+uid="uid://k7e68ovwopry"
+path="res://.godot/imported/Mapa.ldtk-d20839d3e1314016a2c6513d38e18cc0.scn"
+
+[deps]
+
+files=["res:///tilesets/tileset_32px.res", "res:///levels/Spawn_level.scn", "res:///levels/Level_1.scn", "res:///levels/Level_2.scn", "res:///levels/Level_3.scn", "res:///levels/Level_4.scn", "res:///levels/Level_5.scn", "res:///levels/Level_6.scn", "res:///levels/Level_7.scn", "res:///levels/Level_8.scn", "res:///levels/Level_9.scn", "res:///levels/Level_10.scn", "res:///levels/Level_11.scn", "res:///levels/Level_12.scn", "res:///levels/Level_13.scn", "res:///levels/Level_14.scn", "res:///levels/Level_15.scn", "res:///levels/Level_16.scn", "res:///levels/Level_17.scn", "res:///levels/Level_18.scn", "res:///levels/Level_19.scn", "res:///levels/Level_20.scn", "res:///levels/Level_21.scn", "res:///levels/Level_22.scn", "res:///levels/Level_23.scn", "res:///levels/Boss1.scn", "res:///levels/Boss2.scn", "res:///levels/Treasure_2.scn", "res:///levels/Treasure_3.scn", "res:///levels/Treasure_4.scn", "res:///levels/Shop_L.scn", "res:///levels/Shop_R.scn", "res:///levels/Treasure_1.scn", "res://.godot/imported/Mapa.ldtk-d20839d3e1314016a2c6513d38e18cc0.scn"]
+
+source_file="res://Mapa.ldtk"
+dest_files=["res://.godot/imported/Mapa.ldtk-d20839d3e1314016a2c6513d38e18cc0.scn", "res:///tilesets/tileset_32px.res", "res:///levels/Spawn_level.scn", "res:///levels/Level_1.scn", "res:///levels/Level_2.scn", "res:///levels/Level_3.scn", "res:///levels/Level_4.scn", "res:///levels/Level_5.scn", "res:///levels/Level_6.scn", "res:///levels/Level_7.scn", "res:///levels/Level_8.scn", "res:///levels/Level_9.scn", "res:///levels/Level_10.scn", "res:///levels/Level_11.scn", "res:///levels/Level_12.scn", "res:///levels/Level_13.scn", "res:///levels/Level_14.scn", "res:///levels/Level_15.scn", "res:///levels/Level_16.scn", "res:///levels/Level_17.scn", "res:///levels/Level_18.scn", "res:///levels/Level_19.scn", "res:///levels/Level_20.scn", "res:///levels/Level_21.scn", "res:///levels/Level_22.scn", "res:///levels/Level_23.scn", "res:///levels/Boss1.scn", "res:///levels/Boss2.scn", "res:///levels/Treasure_2.scn", "res:///levels/Treasure_3.scn", "res:///levels/Treasure_4.scn", "res:///levels/Shop_L.scn", "res:///levels/Shop_R.scn", "res:///levels/Treasure_1.scn", "res://.godot/imported/Mapa.ldtk-d20839d3e1314016a2c6513d38e18cc0.scn"]
+
+[params]
+
+World=""
+group_world_layers=false
+Level=""
+pack_levels=true
+Layer=""
+layers_always_visible=false
+Tileset=""
+tileset_custom_data=false
+integer_grid_tilesets=false
+atlas_texture_type=0
+Entity=""
+resolve_entityrefs=true
+use_entity_placeholders=false
+Post Import=""
+tileset_post_import=""
+entities_post_import=""
+level_post_import=""
+world_post_import=""
+Debug=""
+force_tileset_reimport=false
+verbose_output=false

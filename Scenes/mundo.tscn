@@ -1,23 +1,38 @@
-[gd_scene load_steps=13 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=28 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
-[ext_resource type="PackedScene" uid="uid://4f4q12mqcr2t" path="res://levels/Level_0.scn" id="2_5ckkb"]
-[ext_resource type="PackedScene" uid="uid://o4kirqi1o3pf" path="res://levels/Level_1.scn" id="3_2hh7m"]
-[ext_resource type="PackedScene" uid="uid://sy8r8cqi7rnp" path="res://levels/Level_2.scn" id="4_t8jxu"]
-[ext_resource type="PackedScene" uid="uid://301tvmrvn3di" path="res://levels/Level_3.scn" id="5_1bodn"]
-[ext_resource type="PackedScene" uid="uid://bhuodhys224k" path="res://levels/Level_4.scn" id="6_pij3u"]
-[ext_resource type="PackedScene" uid="uid://b2usgpbwx8txi" path="res://levels/Level_5.scn" id="7_pfhxm"]
-[ext_resource type="PackedScene" uid="uid://bbdyoai822k48" path="res://levels/Level_6.scn" id="8_pij3u"]
+[ext_resource type="PackedScene" uid="uid://b16yhhle8ibh5" path="res://levels/Level_9.scn" id="2_amofe"]
+[ext_resource type="PackedScene" uid="uid://dyuug8eue11wv" path="res://levels/Level_1.scn" id="2_ibak7"]
+[ext_resource type="PackedScene" uid="uid://qjmcyaaqwxc" path="res://levels/Level_2.scn" id="3_7j6if"]
+[ext_resource type="PackedScene" uid="uid://7n6ffed3f2qd" path="res://levels/Level_3.scn" id="4_has1v"]
+[ext_resource type="PackedScene" uid="uid://bwpghxds78aj5" path="res://levels/Level_4.scn" id="5_7j6if"]
+[ext_resource type="PackedScene" uid="uid://jmap68lkl8qs" path="res://levels/Level_5.scn" id="6_1bodn"]
+[ext_resource type="PackedScene" uid="uid://x5e7nx1yjqcs" path="res://levels/Level_6.scn" id="7_6bs12"]
+[ext_resource type="PackedScene" uid="uid://bq0fjikrqe54h" path="res://levels/Level_7.scn" id="8_amofe"]
 [ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://Scenes/player.tscn" id="9_pfhxm"]
 [ext_resource type="Script" uid="uid://cd5gh6sv8lkbc" path="res://Scripts/camera_2d.gd" id="9_pij3u"]
 [ext_resource type="PackedScene" uid="uid://bjaiecdyli0oo" path="res://Scenes/pause_menu.tscn" id="10_pij3u"]
+[ext_resource type="PackedScene" uid="uid://bbcrd0k5khhks" path="res://levels/Level_8.scn" id="10_ppd06"]
 [ext_resource type="PackedScene" uid="uid://cvugogat7nl5a" path="res://Scenes/ui.tscn" id="11_0oi55"]
+[ext_resource type="PackedScene" uid="uid://cfp4soc478jjn" path="res://levels/Level_13.scn" id="11_d67sf"]
+[ext_resource type="PackedScene" uid="uid://ctl43txd6vuo8" path="res://levels/Level_10.scn" id="11_hppdt"]
+[ext_resource type="PackedScene" uid="uid://bc55epxfsgc07" path="res://levels/Level_14.scn" id="12_btko3"]
+[ext_resource type="PackedScene" uid="uid://5r5n27svg1ch" path="res://levels/Level_11.scn" id="12_rr27p"]
+[ext_resource type="PackedScene" uid="uid://dbb8bys3aif42" path="res://levels/Level_15.scn" id="13_27nup"]
+[ext_resource type="PackedScene" uid="uid://drgv66x2axuhf" path="res://levels/Level_12.scn" id="13_f3x5k"]
+[ext_resource type="PackedScene" uid="uid://c25avv40srv1k" path="res://levels/Level_18.scn" id="14_hnw35"]
+[ext_resource type="PackedScene" uid="uid://cqssbsdicwik" path="res://levels/Level_19.scn" id="15_nmfx7"]
+[ext_resource type="PackedScene" uid="uid://col4bmh6lyr84" path="res://levels/Level_20.scn" id="16_mcf1m"]
+[ext_resource type="PackedScene" uid="uid://dkkxvcpgr5b3c" path="res://levels/Level_16.scn" id="17_27nup"]
+[ext_resource type="PackedScene" uid="uid://bd1k0w1kfmcs5" path="res://levels/Level_17.scn" id="18_r6gbd"]
+[ext_resource type="PackedScene" uid="uid://d0os7v1kmwrn8" path="res://levels/Level_21.scn" id="22_mcf1m"]
+[ext_resource type="PackedScene" uid="uid://d0lhfre3acs2l" path="res://levels/Level_22.scn" id="23_84eq0"]
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
-initial_room = ExtResource("8_pij3u")
-rooms = Array[PackedScene]([ExtResource("2_5ckkb"), ExtResource("3_2hh7m"), ExtResource("5_1bodn")])
-dead_ends = Array[PackedScene]([ExtResource("4_t8jxu"), ExtResource("6_pij3u"), ExtResource("7_pfhxm"), ExtResource("8_pij3u")])
+initial_room = ExtResource("2_amofe")
+rooms = Array[PackedScene]([ExtResource("2_ibak7"), ExtResource("3_7j6if"), ExtResource("4_has1v"), ExtResource("5_7j6if"), ExtResource("6_1bodn"), ExtResource("7_6bs12"), ExtResource("8_amofe"), ExtResource("10_ppd06"), ExtResource("11_d67sf"), ExtResource("12_btko3"), ExtResource("13_27nup"), ExtResource("14_hnw35"), ExtResource("15_nmfx7"), ExtResource("16_mcf1m")])
+dead_ends = Array[PackedScene]([ExtResource("2_amofe"), ExtResource("11_hppdt"), ExtResource("12_rr27p"), ExtResource("13_f3x5k"), ExtResource("17_27nup"), ExtResource("18_r6gbd"), ExtResource("22_mcf1m"), ExtResource("23_84eq0")])
 max_rooms = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
