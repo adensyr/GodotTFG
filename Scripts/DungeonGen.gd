@@ -3,6 +3,8 @@ extends Node2D
 @export var initial_room: PackedScene
 @export var rooms: Array[PackedScene]
 @export var dead_ends: Array[PackedScene]
+@export var treasure_rooms: Array[PackedScene]
+@export var shop_rooms: Array[PackedScene]
 @export var max_rooms: int
 
 var placed_rooms: Array = []
@@ -30,7 +32,14 @@ func generate():
 		try_add_room(rooms)
 	
 	while not placed_rooms.is_empty():
-		try_add_room(dead_ends)
+		if current_rooms == max_rooms:
+			try_add_room(treasure_rooms)
+		else:
+			if current_rooms == (max_rooms+1):
+				try_add_room(shop_rooms)
+				current_rooms+=1
+			else:
+				try_add_room(dead_ends)
 
 func try_add_room(multi_rooms: Array):
 	var base_room = placed_rooms.get(rng.randi_range(0, placed_rooms.size()-1))

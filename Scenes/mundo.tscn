@@ -1,8 +1,9 @@
-[gd_scene load_steps=28 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=35 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://b16yhhle8ibh5" path="res://levels/Level_9.scn" id="2_amofe"]
 [ext_resource type="PackedScene" uid="uid://dyuug8eue11wv" path="res://levels/Level_1.scn" id="2_ibak7"]
+[ext_resource type="PackedScene" uid="uid://bcsnjy6xliuxh" path="res://levels/Spawn_level.scn" id="2_pl0kk"]
 [ext_resource type="PackedScene" uid="uid://qjmcyaaqwxc" path="res://levels/Level_2.scn" id="3_7j6if"]
 [ext_resource type="PackedScene" uid="uid://7n6ffed3f2qd" path="res://levels/Level_3.scn" id="4_has1v"]
 [ext_resource type="PackedScene" uid="uid://bwpghxds78aj5" path="res://levels/Level_4.scn" id="5_7j6if"]
@@ -27,12 +28,20 @@
 [ext_resource type="PackedScene" uid="uid://bd1k0w1kfmcs5" path="res://levels/Level_17.scn" id="18_r6gbd"]
 [ext_resource type="PackedScene" uid="uid://d0os7v1kmwrn8" path="res://levels/Level_21.scn" id="22_mcf1m"]
 [ext_resource type="PackedScene" uid="uid://d0lhfre3acs2l" path="res://levels/Level_22.scn" id="23_84eq0"]
+[ext_resource type="PackedScene" uid="uid://dvvntg5iq3xbh" path="res://levels/Treasure_1.scn" id="25_jfclk"]
+[ext_resource type="PackedScene" uid="uid://6d1uuayw80e2" path="res://levels/Treasure_2.scn" id="26_fnw41"]
+[ext_resource type="PackedScene" uid="uid://bspab7sd0cw0f" path="res://levels/Treasure_3.scn" id="27_epo55"]
+[ext_resource type="PackedScene" uid="uid://dtsoyrvb64rvl" path="res://levels/Treasure_4.scn" id="28_1dpdg"]
+[ext_resource type="PackedScene" uid="uid://r4p3polef7d3" path="res://levels/Shop_L.scn" id="29_2u6jv"]
+[ext_resource type="PackedScene" uid="uid://bsmcyb516ojs3" path="res://levels/Shop_R.scn" id="30_2t8tb"]
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
-initial_room = ExtResource("2_amofe")
+initial_room = ExtResource("2_pl0kk")
 rooms = Array[PackedScene]([ExtResource("2_ibak7"), ExtResource("3_7j6if"), ExtResource("4_has1v"), ExtResource("5_7j6if"), ExtResource("6_1bodn"), ExtResource("7_6bs12"), ExtResource("8_amofe"), ExtResource("10_ppd06"), ExtResource("11_d67sf"), ExtResource("12_btko3"), ExtResource("13_27nup"), ExtResource("14_hnw35"), ExtResource("15_nmfx7"), ExtResource("16_mcf1m")])
 dead_ends = Array[PackedScene]([ExtResource("2_amofe"), ExtResource("11_hppdt"), ExtResource("12_rr27p"), ExtResource("13_f3x5k"), ExtResource("17_27nup"), ExtResource("18_r6gbd"), ExtResource("22_mcf1m"), ExtResource("23_84eq0")])
+treasure_rooms = Array[PackedScene]([ExtResource("25_jfclk"), ExtResource("26_fnw41"), ExtResource("27_epo55"), ExtResource("28_1dpdg")])
+shop_rooms = Array[PackedScene]([ExtResource("29_2u6jv"), ExtResource("30_2t8tb")])
 max_rooms = 10
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -44,5 +53,6 @@ script = ExtResource("9_pij3u")
 [node name="Player" parent="." instance=ExtResource("9_pfhxm")]
 
 [node name="UI" parent="." instance=ExtResource("11_0oi55")]
+visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]
