@@ -1,11 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2bbcbknbn4ac"]
+[gd_scene load_steps=2 format=3 uid="uid://c2bbcbknbn4ac"]
 
 [ext_resource type="Script" uid="uid://to828lct1o2u" path="res://Scripts/enemy_spawner.gd" id="1_ewhtn"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_00s5r"]
-
-[node name="EnemySpawner" type="Area2D"]
+[node name="EnemySpawner" type="Marker2D"]
 script = ExtResource("1_ewhtn")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_00s5r")

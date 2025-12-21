@@ -20,6 +20,7 @@ func _ready() -> void:
 	rng.seed = seed_used
 	get_node("PauseMenu/ColorRect/LineEdit").set_text(str(seed_used))
 	generate()
+	print(get_tree())
 
 func generate():
 	var start_room = initial_room.instantiate()
@@ -34,12 +35,11 @@ func generate():
 	while not placed_rooms.is_empty():
 		if current_rooms == max_rooms:
 			try_add_room(treasure_rooms)
+		elif current_rooms == (max_rooms+1):
+			try_add_room(shop_rooms)
+			current_rooms+=1
 		else:
-			if current_rooms == (max_rooms+1):
-				try_add_room(shop_rooms)
-				current_rooms+=1
-			else:
-				try_add_room(dead_ends)
+			try_add_room(dead_ends)
 
 func try_add_room(multi_rooms: Array):
 	var base_room = placed_rooms.get(rng.randi_range(0, placed_rooms.size()-1))

@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=34 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://b16yhhle8ibh5" path="res://levels/Level_9.scn" id="2_amofe"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://jmap68lkl8qs" path="res://levels/Level_5.scn" id="6_1bodn"]
 [ext_resource type="PackedScene" uid="uid://x5e7nx1yjqcs" path="res://levels/Level_6.scn" id="7_6bs12"]
 [ext_resource type="PackedScene" uid="uid://bq0fjikrqe54h" path="res://levels/Level_7.scn" id="8_amofe"]
-[ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://Scenes/player.tscn" id="9_pfhxm"]
 [ext_resource type="Script" uid="uid://cd5gh6sv8lkbc" path="res://Scripts/camera_2d.gd" id="9_pij3u"]
 [ext_resource type="PackedScene" uid="uid://bjaiecdyli0oo" path="res://Scenes/pause_menu.tscn" id="10_pij3u"]
 [ext_resource type="PackedScene" uid="uid://bbcrd0k5khhks" path="res://levels/Level_8.scn" id="10_ppd06"]
@@ -49,8 +48,6 @@ zoom = Vector2(1.26, 1.26)
 position_smoothing_enabled = true
 editor_draw_drag_margin = true
 script = ExtResource("9_pij3u")
-
-[node name="Player" parent="." instance=ExtResource("9_pfhxm")]
 
 [node name="UI" parent="." instance=ExtResource("11_0oi55")]
 visible = false
