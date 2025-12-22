@@ -13,3 +13,7 @@ func _on_seed_pressed() -> void:
 	get_tree().root.add_child(mundo)
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene=mundo
+
+
+func _on_controls_pressed() -> void:
+	get_tree().change_scene_to_file("res://Scenes/controls.tscn")

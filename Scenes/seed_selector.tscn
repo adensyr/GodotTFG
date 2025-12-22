@@ -28,7 +28,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -443.5
-offset_top = -262.0
+offset_top = -141.0
 offset_right = 443.5
 offset_bottom = 262.0
 grow_horizontal = 2
@@ -64,9 +64,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -140.0
-offset_top = -187.0
+offset_top = -161.0
 offset_right = 138.0
-offset_bottom = -46.0
+offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 50
@@ -98,5 +98,15 @@ seed"
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="Controls" type="Button" parent="."]
+layout_mode = 0
+offset_left = 446.0
+offset_top = 46.0
+offset_right = 713.0
+offset_bottom = 124.0
+theme_override_font_sizes/font_size = 40
+text = "Controles"
+
 [connection signal="pressed" from="HBoxContainer/Seed" to="." method="_on_seed_pressed"]
 [connection signal="pressed" from="HBoxContainer/NoSeed" to="." method="_on_no_seed_pressed"]
+[connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]

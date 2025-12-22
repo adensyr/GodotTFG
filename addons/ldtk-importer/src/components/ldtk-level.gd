@@ -9,6 +9,7 @@ extends Node2D
 @export var fields: Dictionary
 @export var neighbours: Array
 @export var bg_color: Color
+var enemy_count:= 0
 
 func _ready() -> void:
 	queue_redraw()

@@ -3,19 +3,27 @@ extends Marker2D
 @onready var Enemy = load("res://Scenes/enemy.tscn")
 var spawned := false
 
-func spawn(body):
+func choose_spawn(body, enemy_count):
 	if not spawned and body.name == "Player":
-		spawned = true
-		var enemy_instance = null
-		if get_parent().name == "Boss1":
-			enemy_instance = Enemy.instantiate() #cambiar enemy por boss 1
-			print("boss1")
-		elif get_parent().name == "Boss2":
-			enemy_instance = Enemy.instantiate() #cambiar enemy por boss 2
-			print("boss2")
+		if enemy_count == 0:
+			spawn()
 		else:
-			enemy_instance = Enemy.instantiate()
-		call_deferred("add_child", enemy_instance)
+			if (get_parent().get_parent().rng.randi() % 2) == 0:
+				spawn()
+		get_parent().enemy_count+=1
+
+func spawn():
+	spawned = true
+	var enemy_instance = null
+	if get_parent().name == "Boss1":
+		enemy_instance = Enemy.instantiate() #cambiar enemy por boss 1
+		print("boss1")
+	elif get_parent().name == "Boss2":
+		enemy_instance = Enemy.instantiate() #cambiar enemy por boss 2
+		print("boss2")
+	else:
+		enemy_instance = Enemy.instantiate()
+	call_deferred("add_child", enemy_instance)
 
 func _on_camera_area_body_entered(body: Node2D) -> void:
-	spawn(body)
+	choose_spawn(body, get_parent().enemy_count)

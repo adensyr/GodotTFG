@@ -1,0 +1,76 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci2vyniqiq0q2"]
+
+[ext_resource type="Script" uid="uid://dqc27pep4mvbl" path="res://Scripts/death_panel.gd" id="1_8qavf"]
+[ext_resource type="Texture2D" uid="uid://cxtgdracfiygg" path="res://textures/flecha atras.png" id="2_e8c2f"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
+bg_color = Color(0.68283576, 0.6083382, 0.60801023, 1)
+
+[node name="DeathPanel" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_8qavf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0619267, 0.0619267, 0.061926693, 1)
+
+[node name="TextEdit" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 68.0
+offset_right = 738.12524
+offset_bottom = 182.0
+rotation = 0.05235988
+theme_override_colors/font_readonly_color = Color(0, 0, 0, 0.88235295)
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
+text = "Controles"
+editable = false
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 188.0
+offset_top = 252.0
+offset_right = 449.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 45
+text = "Movimiento
+
+Ataque
+
+Pausa"
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 701.0
+offset_top = 252.0
+offset_right = 962.0
+offset_bottom = 579.0
+theme_override_font_sizes/font_size = 45
+text = "Flechas
+
+Intro
+
+Escape"
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_left = 147.0
+offset_top = 93.0
+offset_right = 205.0
+offset_bottom = 153.0
+icon = ExtResource("2_e8c2f")
+flat = true
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
