@@ -12,6 +12,7 @@ var total_rooms: Array = []
 var current_rooms:= 1
 var rng:= RandomNumberGenerator.new()
 var seed_used
+var level:= 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -20,7 +21,6 @@ func _ready() -> void:
 	rng.seed = seed_used
 	get_node("PauseMenu/ColorRect/LineEdit").set_text(str(seed_used))
 	generate()
-	print(get_tree())
 
 func generate():
 	var start_room = initial_room.instantiate()
@@ -107,6 +107,31 @@ func overlaps(room: Node2D) -> bool:
 		if room_rect.intersects(r_rect):
 			return true
 	return false
+
+func cross_door(where):
+	var nodos = get_children()
+	for n in nodos:
+		if n.name in ["Player", "Camera2D", "UI", "PauseMenu"]:
+			pass
+		else:
+			n.queue_free()
+	if where == "boss":
+		var boss_pre
+		match level:
+			1:
+				boss_pre = preload("res://levels/Boss1.scn")
+			2:
+				boss_pre = preload("res://levels/Boss2.scn")
+		var boss = boss_pre.instantiate()
+		add_child(boss)
+	elif where == "next":
+		pass
+		#match level:
+			#1:
+				#level+=1
+				#generate()
+			#2:
+				#get_tree().change_scene_to_file("res://Scenes/end.tscn")
 
 func _on_camera_area_body_entered(body, room):
 	if body.name == "Player":

@@ -39,7 +39,7 @@ func get_hit():
 	PVs -= 1
 	if PVs <= 0:
 		velocity = Vector2(0,0)
-		get_tree().change_scene_to_file("res://Scenes/DeathPanel.tscn")
+		get_tree().change_scene_to_file("res://Scenes/death_panel.tscn")
 	else:
 		inmune = true
 		var life_array = get_parent().get_node("UI/ColorRectL/VBoxContainer").get_children()

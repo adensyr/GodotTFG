@@ -7,5 +7,5 @@ func _ready() -> void:
 	spawn()
 
 func spawn() -> void:
-	var player_instance = Player.instantiate()
-	get_parent().get_parent().call_deferred("add_child", player_instance)
+	var player = get_parent().get_parent().get_node("Player")
+	player.position = self.position

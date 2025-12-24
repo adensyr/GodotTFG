@@ -17,6 +17,7 @@ func spawn():
 	var enemy_instance = null
 	if get_parent().name == "Boss1":
 		enemy_instance = Enemy.instantiate() #cambiar enemy por boss 1
+		enemy_instance.add_to_group("boss")
 		print("boss1")
 	elif get_parent().name == "Boss2":
 		enemy_instance = Enemy.instantiate() #cambiar enemy por boss 2

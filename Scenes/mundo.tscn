@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=35 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://b16yhhle8ibh5" path="res://levels/Level_9.scn" id="2_amofe"]
@@ -33,6 +33,7 @@
 [ext_resource type="PackedScene" uid="uid://dtsoyrvb64rvl" path="res://levels/Treasure_4.scn" id="28_1dpdg"]
 [ext_resource type="PackedScene" uid="uid://r4p3polef7d3" path="res://levels/Shop_L.scn" id="29_2u6jv"]
 [ext_resource type="PackedScene" uid="uid://bsmcyb516ojs3" path="res://levels/Shop_R.scn" id="30_2t8tb"]
+[ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://Scenes/player.tscn" id="34_pl0kk"]
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
@@ -53,3 +54,5 @@ script = ExtResource("9_pij3u")
 visible = false
 
 [node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]
+
+[node name="Player" parent="." instance=ExtResource("34_pl0kk")]
