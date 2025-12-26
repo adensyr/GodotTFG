@@ -9,7 +9,7 @@ extends Node2D
 
 var placed_rooms: Array = []
 var total_rooms: Array = []
-var current_rooms:= 1
+var current_rooms: int
 var rng:= RandomNumberGenerator.new()
 var seed_used
 var level:= 1
@@ -17,14 +17,16 @@ var level:= 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if seed_used == null:
-		seed_used = randi()
-	rng.seed = seed_used
+		seed_used = randi_range(0, 4294967290)
 	get_node("PauseMenu/ColorRect/LineEdit").set_text(str(seed_used))
 	generate()
 
 func generate():
+	rng.seed = seed_used
+	
 	var start_room = initial_room.instantiate()
 	add_child(start_room)
+	current_rooms = 1
 	start_room.position = Vector2.ZERO
 	placed_rooms.append(start_room)
 	total_rooms.append(start_room)
@@ -125,13 +127,14 @@ func cross_door(where):
 		var boss = boss_pre.instantiate()
 		add_child(boss)
 	elif where == "next":
-		pass
-		#match level:
-			#1:
-				#level+=1
-				#generate()
-			#2:
-				#get_tree().change_scene_to_file("res://Scenes/end.tscn")
+		match level:
+			1:
+				level+=1
+				seed_used+=1
+				total_rooms = []
+				generate()
+			2:
+				get_tree().change_scene_to_file("res://Scenes/end.tscn")
 
 func _on_camera_area_body_entered(body, room):
 	if body.name == "Player":

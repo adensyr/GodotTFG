@@ -53,7 +53,7 @@ offset_right = 124.0
 offset_bottom = 108.0
 grow_horizontal = 2
 grow_vertical = 2
-max_value = 4294967295.0
+max_value = 4294967290.0
 alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/Seed"]
