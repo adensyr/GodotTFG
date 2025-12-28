@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d0gooqi51fx4w"]
+
+[ext_resource type="Script" uid="uid://bserpbel8mlr0" path="res://Scripts/Objetos/botas.gd" id="1_jdn3x"]
+
+[node name="Botas" type="Node2D"]
+script = ExtResource("1_jdn3x")

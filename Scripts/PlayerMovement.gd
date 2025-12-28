@@ -1,13 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -550.0
+var SPEED = 300.0
+var JUMP_VELOCITY = -550.0
 
 @onready var ani = $Sprite2D/AnimationPlayer
 
-var PVs := 4
+var PVs := 4.0
 var inmune := false
+var damage := 1.0
+var defended:= false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -35,8 +37,21 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 	if not inmune and body.is_in_group("hurt"):
 		get_hit()
 
+func new_item(item):
+	get_node("ItemBag").add_child(item)
+	if item.name == "Botas":
+		SPEED=350.0
+		JUMP_VELOCITY=-570.0
+	elif item.name == "Escudo":
+		defended = true
+	else:
+		damage+=item.get_bonus_damage()
+
 func get_hit():
-	PVs -= 1
+	if defended:
+		PVs -= 0.5
+	else:
+		PVs -= 1
 	if PVs <= 0:
 		velocity = Vector2(0,0)
 		get_tree().change_scene_to_file("res://Scenes/death_panel.tscn")

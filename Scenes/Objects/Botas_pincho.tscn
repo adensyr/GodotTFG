@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dirvlyqst8f04"]
+
+[ext_resource type="Script" uid="uid://n5q7ypbb4ldf" path="res://Scripts/Objetos/botas_pincho.gd" id="1_glc3n"]
+
+[node name="BotasPincho" type="Node2D"]
+script = ExtResource("1_glc3n")

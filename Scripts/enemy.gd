@@ -5,7 +5,7 @@ const SPEED = 100.0
 
 var player = null
 var detected = false
-var PVs := 2
+var PVs := 3.0
 var inmune := false
 
 func _ready() -> void:
@@ -32,14 +32,15 @@ func _on_detection_range_body_exited(body: Node2D) -> void:
 		detected = false
 
 func get_hit():
-	PVs -= 1
+	var damage = player.damage
+	PVs -= damage
 	if PVs <= 0:
 		queue_free()
 	else:
+		#pensar como poner los efectos extra (froze y veneno)
 		inmune = true
 		await get_tree().create_timer(1.5).timeout
 		inmune = false
-
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if not inmune and area.is_in_group("P_Attack"):

@@ -116,4 +116,6 @@ rotation = 1.5707964
 scale = Vector2(0.5738884, 1.1077667)
 texture = ExtResource("3_i3pqv")
 
+[node name="ItemBag" type="Node2D" parent="."]
+
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

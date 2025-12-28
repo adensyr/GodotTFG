@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://ooqhdx5mdp71"]
+
+[ext_resource type="Script" uid="uid://ce61y3f4edxyo" path="res://Scripts/Objetos/botas_cohete.gd" id="1_yr3q7"]
+
+[node name="BotasCohete" type="Node2D"]
+script = ExtResource("1_yr3q7")
