@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://bbrwh6pq23o5k"]
 
 [ext_resource type="Script" uid="uid://jgfj8ummq2tv" path="res://Scripts/item_stand.gd" id="1_5tsai"]
-[ext_resource type="PackedScene" uid="uid://cfnhv0pypa7no" path="res://Scenes/Objects/Fuego.tscn" id="2_5tsai"]
+[ext_resource type="PackedScene" uid="uid://t837h8smue1y" path="res://Scenes/Objects/Escudo.tscn" id="2_5tsai"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h7j2x"]
 size = Vector2(42, 31)
 
 [node name="ItemStand" type="Area2D"]
 script = ExtResource("1_5tsai")
-items = Array[PackedScene]([ExtResource("2_5tsai")])
+items = [ExtResource("2_5tsai")]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

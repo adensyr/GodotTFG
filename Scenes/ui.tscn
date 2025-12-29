@@ -1,158 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://cvugogat7nl5a"]
+[gd_scene load_steps=3 format=3 uid="uid://cvugogat7nl5a"]
 
 [ext_resource type="Texture2D" uid="uid://35dpafepnexn" path="res://textures/Full pv big.png" id="1_fyqef"]
-[ext_resource type="Texture2D" uid="uid://dmqsby8aoscpp" path="res://textures/1ss pv big.png" id="2_ibotj"]
-[ext_resource type="Texture2D" uid="uid://bdrlls878rekj" path="res://textures/half pv big.png" id="3_n5ude"]
-[ext_resource type="Texture2D" uid="uid://dt40whayi6bof" path="res://textures/3ss pv big.png" id="4_y4yjw"]
-[ext_resource type="Texture2D" uid="uid://dk1fn6japqgr3" path="res://textures/Empty pv big.png" id="5_waa4j"]
-
-[sub_resource type="Animation" id="Animation_ibotj"]
-resource_name = "LosePV"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ibotj"), ExtResource("3_n5ude"), ExtResource("4_y4yjw"), ExtResource("5_waa4j")]
-}
-
-[sub_resource type="Animation" id="Animation_n5ude"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_fyqef")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_y4yjw"]
-_data = {
-&"LosePV": SubResource("Animation_ibotj"),
-&"RESET": SubResource("Animation_n5ude")
-}
-
-[sub_resource type="Animation" id="Animation_y4yjw"]
-resource_name = "LosePV"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ibotj"), ExtResource("3_n5ude"), ExtResource("4_y4yjw"), ExtResource("5_waa4j")]
-}
-
-[sub_resource type="Animation" id="Animation_waa4j"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_fyqef")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ok7cu"]
-_data = {
-&"LosePV": SubResource("Animation_y4yjw"),
-&"RESET": SubResource("Animation_waa4j")
-}
-
-[sub_resource type="Animation" id="Animation_e2l4f"]
-resource_name = "LosePV"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ibotj"), ExtResource("3_n5ude"), ExtResource("4_y4yjw"), ExtResource("5_waa4j")]
-}
-
-[sub_resource type="Animation" id="Animation_n5rqp"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_fyqef")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_n5rqp"]
-_data = {
-&"LosePV": SubResource("Animation_e2l4f"),
-&"RESET": SubResource("Animation_n5rqp")
-}
-
-[sub_resource type="Animation" id="Animation_ok7cu"]
-resource_name = "LosePV"
-length = 1.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.5, 1, 1.5),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [ExtResource("2_ibotj"), ExtResource("3_n5ude"), ExtResource("4_y4yjw"), ExtResource("5_waa4j")]
-}
-
-[sub_resource type="Animation" id="Animation_irxef"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:texture")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [ExtResource("1_fyqef")]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_e2l4f"]
-_data = {
-&"LosePV": SubResource("Animation_ok7cu"),
-&"RESET": SubResource("Animation_irxef")
-}
+[ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations/UIAnimations.res" id="2_nf4gj"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -195,7 +44,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRectL/VBoxContainer/Sprite2D"]
 libraries = {
-&"": SubResource("AnimationLibrary_y4yjw")
+&"UIAnimations": ExtResource("2_nf4gj")
 }
 
 [node name="Sprite2D2" type="Sprite2D" parent="ColorRectL/VBoxContainer"]
@@ -206,7 +55,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRectL/VBoxContainer/Sprite2D2"]
 libraries = {
-&"": SubResource("AnimationLibrary_ok7cu")
+&"UIAnimations": ExtResource("2_nf4gj")
 }
 
 [node name="Sprite2D3" type="Sprite2D" parent="ColorRectL/VBoxContainer"]
@@ -217,7 +66,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRectL/VBoxContainer/Sprite2D3"]
 libraries = {
-&"": SubResource("AnimationLibrary_n5rqp")
+&"UIAnimations": ExtResource("2_nf4gj")
 }
 
 [node name="Sprite2D4" type="Sprite2D" parent="ColorRectL/VBoxContainer"]
@@ -228,7 +77,7 @@ centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ColorRectL/VBoxContainer/Sprite2D4"]
 libraries = {
-&"": SubResource("AnimationLibrary_e2l4f")
+&"UIAnimations": ExtResource("2_nf4gj")
 }
 
 [node name="ColorRectR" type="ColorRect" parent="."]

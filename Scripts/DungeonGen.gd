@@ -6,6 +6,7 @@ extends Node2D
 @export var treasure_rooms: Array[PackedScene]
 @export var shop_rooms: Array[PackedScene]
 @export var max_rooms: int
+@export var items: Array[PackedScene]
 
 var placed_rooms: Array = []
 var total_rooms: Array = []
@@ -17,7 +18,9 @@ var level:= 1
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	if seed_used == null:
-		seed_used = randi_range(0, 4294967290)
+		seed_used = randi()
+		if seed_used > 5:
+			seed_used-=5
 	get_node("PauseMenu/ColorRect/LineEdit").set_text(str(seed_used))
 	generate()
 

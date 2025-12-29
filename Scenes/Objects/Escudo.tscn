@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://t837h8smue1y"]
+[gd_scene load_steps=3 format=3 uid="uid://t837h8smue1y"]
 
 [ext_resource type="Script" uid="uid://0r18alb6gcc2" path="res://Scripts/Objetos/escudo.gd" id="1_hl1e5"]
+[ext_resource type="Texture2D" uid="uid://dk1fn6japqgr3" path="res://textures/Empty pv big.png" id="2_xkr6g"]
 
 [node name="Escudo" type="Node2D"]
 script = ExtResource("1_hl1e5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_xkr6g")

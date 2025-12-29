@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 var SPEED = 300.0
 var JUMP_VELOCITY = -550.0
 
@@ -48,16 +47,29 @@ func new_item(item):
 		damage+=item.get_bonus_damage()
 
 func get_hit():
+	inmune = true
+	var life_array = get_parent().get_node("UI/ColorRectL/VBoxContainer").get_children()
 	if defended:
-		PVs -= 0.5
+		if PVs == 0.5:
+			die()
+		else:
+			var intPV = int(PVs+0.5)
+			if PVs == int(PVs+0.5):
+				life_array[intPV-1].get_node("AnimationPlayer").play("UIAnimations/LoseHalfPV")
+			else:
+				life_array[intPV-1].get_node("AnimationPlayer").play("UIAnimations/LoseHalfPV2")
+			PVs -= 0.5
+			await get_tree().create_timer(2).timeout
+			inmune = false
 	else:
-		PVs -= 1
-	if PVs <= 0:
-		velocity = Vector2(0,0)
-		get_tree().change_scene_to_file("res://Scenes/death_panel.tscn")
-	else:
-		inmune = true
-		var life_array = get_parent().get_node("UI/ColorRectL/VBoxContainer").get_children()
-		life_array[PVs].get_node("AnimationPlayer").play("LosePV")
-		await get_tree().create_timer(2).timeout
-		inmune = false
+		if PVs == 1:
+			die()
+		else:
+			life_array[PVs-1].get_node("AnimationPlayer").play("UIAnimations/LosePV")
+			PVs -= 1
+			await get_tree().create_timer(2).timeout
+			inmune = false
+
+func die():
+	velocity = Vector2(0,0)
+	call_deferred("get_tree.change_scene_to_file", "res://Scenes/death_panel.tscn")
