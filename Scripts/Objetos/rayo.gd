@@ -1,8 +1,5 @@
 extends GameObject
 
-func get_bonus_damage():
-	return 0.5
-
 func get_extra_effect():
 	#0.5s de pausa
-	pass
+	player.get_node("Attack").change_stats(0.5, false, 0, true, 0.5)

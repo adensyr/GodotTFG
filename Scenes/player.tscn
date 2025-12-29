@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://c82wsv3p8cs5s"]
+[gd_scene load_steps=11 format=3 uid="uid://c82wsv3p8cs5s"]
 
 [ext_resource type="Script" uid="uid://csbsfbimiljnq" path="res://Scripts/PlayerMovement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://textures/Stickman Base.png" id="2_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="3_i3pqv"]
+[ext_resource type="Script" uid="uid://170na24yv501" path="res://Scripts/attack.gd" id="3_vgqql"]
 
 [sub_resource type="Animation" id="Animation_onrkg"]
 resource_name = "Attack"
@@ -98,6 +99,7 @@ shape = SubResource("RectangleShape2D_i3pqv")
 [node name="Attack" type="Area2D" parent="." groups=["P_Attack"]]
 collision_layer = 2
 collision_mask = 2
+script = ExtResource("3_vgqql")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
 light_mask = 2

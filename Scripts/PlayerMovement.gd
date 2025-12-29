@@ -7,7 +7,6 @@ var JUMP_VELOCITY = -550.0
 
 var PVs := 4.0
 var inmune := false
-var damage := 1.0
 var defended:= false
 
 func _physics_process(delta: float) -> void:
@@ -44,7 +43,7 @@ func new_item(item):
 	elif item.name == "Escudo":
 		defended = true
 	else:
-		damage+=item.get_bonus_damage()
+		item.get_extra_effect()
 
 func get_hit():
 	inmune = true

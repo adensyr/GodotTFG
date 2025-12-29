@@ -10,9 +10,6 @@ func _ready() -> void:
 func actualizar_bolsa():
 	objetos = get_parent().get_node("ItemBag").get_children()
 
-func get_bonus_damage():
-	pass
-
 func get_extra_effect():
 	pass
 
