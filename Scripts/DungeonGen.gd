@@ -1,5 +1,7 @@
 extends Node2D
 
+#cambiar backgound a blanco (Project->Project settings->Rendering->Enviroment)
+
 @export var initial_room: PackedScene
 @export var rooms: Array[PackedScene]
 @export var dead_ends: Array[PackedScene]
