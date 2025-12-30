@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://7pfxjxuvkmkb"]
+
+[ext_resource type="Script" uid="uid://c1irajcabux5" path="res://Scripts/breakable.gd" id="1_pwuh6"]
+[ext_resource type="Texture2D" uid="uid://bdrlls878rekj" path="res://textures/half pv big.png" id="2_1r4m7"]
+[ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations.res" id="3_713dx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vblu5"]
+size = Vector2(32, 32)
+
+[node name="Breakable" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_pwuh6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_1r4m7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+&"UIAnimations": ExtResource("3_713dx")
+}
+
+[node name="Hitbox" type="CollisionShape2D" parent="."]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("RectangleShape2D_vblu5")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

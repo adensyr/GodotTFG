@@ -59,3 +59,5 @@ visible = false
 [node name="PauseMenu" parent="." instance=ExtResource("10_pij3u")]
 
 [node name="Player" parent="." instance=ExtResource("34_pl0kk")]
+z_index = 1000
+z_as_relative = false
