@@ -1,6 +1,6 @@
 extends GameObject
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#salto en la pared
 	if player.is_on_wall():
 		player.velocity = Vector2(0,0)

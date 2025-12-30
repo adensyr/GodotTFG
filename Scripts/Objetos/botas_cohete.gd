@@ -2,7 +2,7 @@ extends GameObject
 
 var saltos:= 0
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	#doble salto
 	if Input.is_action_just_pressed("ui_select") and not player.is_on_floor():
 		player.velocity.y = player.JUMP_VELOCITY

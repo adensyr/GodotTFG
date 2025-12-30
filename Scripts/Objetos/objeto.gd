@@ -13,5 +13,5 @@ func actualizar_bolsa():
 func get_extra_effect():
 	pass
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
