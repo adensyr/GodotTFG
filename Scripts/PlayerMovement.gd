@@ -36,7 +36,17 @@ func _on_hitbox_body_entered(body: Node2D) -> void:
 		get_hit()
 
 func new_item(item):
-	get_node("ItemBag").add_child(item)
+	var itemBag = get_node("ItemBag")
+	itemBag.add_child(item)
+	var itemUiBoxes = get_parent().get_node("UI/ColorRectR/HBoxContainer").get_children()
+	var itemTexture = item.get_node("Sprite2D").texture
+	var textureRect:= TextureRect.new()
+	textureRect.set_expand_mode(4 as TextureRect.ExpandMode)
+	textureRect.set_texture(itemTexture)
+	if (itemBag.get_children().size() % 2) == 0:
+		itemUiBoxes[0].add_child(textureRect)
+	else:
+		itemUiBoxes[1].add_child(textureRect)
 	if item.name == "Botas":
 		SPEED=350.0
 		JUMP_VELOCITY=-570.0
