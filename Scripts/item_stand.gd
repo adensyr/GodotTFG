@@ -1,4 +1,5 @@
 extends Area2D
+class_name item_stand
 
 var player_inside:= false
 var rng:= RandomNumberGenerator.new()

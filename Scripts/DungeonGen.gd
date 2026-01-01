@@ -7,7 +7,6 @@ extends Node2D
 @export var dead_ends: Array[PackedScene]
 @export var treasure_rooms: Array[PackedScene]
 @export var shop_rooms: Array[PackedScene]
-@export var max_rooms: int
 @export var items: Array[PackedScene]
 
 var placed_rooms: Array = []
@@ -16,6 +15,7 @@ var current_rooms: int
 var rng:= RandomNumberGenerator.new()
 var seed_used
 var level:= 1
+var max_rooms:= 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -135,6 +135,7 @@ func cross_door(where):
 		match level:
 			1:
 				level+=1
+				max_rooms+=3
 				seed_used+=1
 				total_rooms = []
 				generate()

@@ -3,10 +3,11 @@ extends CharacterBody2D
 var SPEED = 300.0
 var JUMP_VELOCITY = -550.0
 
-@onready var ani = $AnimatedSprite2D/AnimationPlayer
+@onready var ani = $WeaponSlot/Fists/AnimationPlayer
 @onready var aniSprite:= $AnimatedSprite2D
 
 var PVs := 4.0
+var dinero:= 0
 var inmune := false
 var defended:= false
 var startedRun:= false
@@ -42,7 +43,7 @@ func _physics_process(delta: float) -> void:
 		var direction := Input.get_axis("ui_left", "ui_right")
 		if direction:
 			velocity.x = direction * SPEED
-			if is_on_floor() or velocity.y < 20:
+			if (is_on_floor() or velocity.y < 20) and not aniSprite.animation == "Jump":
 				start_running(direction)
 		else:
 			velocity.x = move_toward(velocity.x, 0, SPEED)
@@ -101,6 +102,16 @@ func new_item(item):
 		defended = true
 	else:
 		item.get_extra_effect()
+
+func get_wpn(weapon):
+	var slot = get_node("WeaponSlot")
+	slot.get_child(0).free()
+	slot.add_child(weapon)
+	
+	ani = slot.get_child(0).get_node("AnimationPlayer")
+	
+	for i in get_node("ItemBag").get_children():
+		i.get_extra_effect()
 
 func _on_hitbox_body_entered(body: Node2D) -> void:
 	if not inmune and body.is_in_group("hurt"):

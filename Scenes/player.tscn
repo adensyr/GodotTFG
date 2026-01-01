@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=3 uid="uid://c82wsv3p8cs5s"]
+[gd_scene load_steps=31 format=3 uid="uid://c82wsv3p8cs5s"]
 
 [ext_resource type="Script" uid="uid://csbsfbimiljnq" path="res://Scripts/PlayerMovement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://di5ylml4kdr5c" path="res://Animations/Death/Death_0000.png" id="2_0gysh"]
@@ -6,12 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://jv7tauv5ggap" path="res://Animations/Idle_0000_0000.png" id="2_x3wgy"]
 [ext_resource type="Texture2D" uid="uid://nc0pftssqwf1" path="res://Animations/Start run/Start_run_0000.png" id="3_f1ek2"]
 [ext_resource type="Texture2D" uid="uid://b0tx4nytiycy3" path="res://Animations/Jump/Jump_0000.png" id="3_fd4e3"]
-[ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="3_i3pqv"]
 [ext_resource type="Texture2D" uid="uid://c4tsy3fvnd7s1" path="res://Animations/Fall/Fall_0001.png" id="3_l6n3p"]
 [ext_resource type="Texture2D" uid="uid://dv2tsgloy6aev" path="res://Animations/Run/Running_0000.png" id="3_ukyrk"]
 [ext_resource type="Texture2D" uid="uid://cixadetbfugos" path="res://Animations/Death/Death_0001.png" id="3_vfarp"]
-[ext_resource type="Script" uid="uid://170na24yv501" path="res://Scripts/attack.gd" id="3_vgqql"]
-[ext_resource type="Animation" uid="uid://c7ip8kaul0m3j" path="res://Animations/Attack.res" id="4_3smsa"]
 [ext_resource type="Texture2D" uid="uid://bobw3qyyk1k54" path="res://Animations/Run/Running_0001.png" id="4_7dp3o"]
 [ext_resource type="Texture2D" uid="uid://c0ogqcj1llqny" path="res://Animations/Fall/Fall_0002.png" id="4_olqyp"]
 [ext_resource type="Texture2D" uid="uid://b25mggl5xx35w" path="res://Animations/Jump/Jump_0001.png" id="4_qqcod"]
@@ -29,6 +26,7 @@
 [ext_resource type="Texture2D" uid="uid://dglbijwkhpr78" path="res://Animations/Damage/Damage_0001.png" id="12_ypfnu"]
 [ext_resource type="Texture2D" uid="uid://tt0jd607n31m" path="res://Animations/Damage/Damage_0002.png" id="13_xuaoq"]
 [ext_resource type="Texture2D" uid="uid://clke8nkkayewa" path="res://Animations/Damage/Damage_0003.png" id="14_wohnl"]
+[ext_resource type="PackedScene" uid="uid://ppnq7ppjje35" path="res://Scenes/Weapons/Fists.tscn" id="30_ypfnu"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8erm5"]
 animations = [{
@@ -157,11 +155,6 @@ animations = [{
 "speed": 15.0
 }]
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_pu2lt"]
-_data = {
-&"Attack": ExtResource("4_3smsa")
-}
-
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
 radius = 11.5
 height = 57.0
@@ -169,20 +162,12 @@ height = 57.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
 size = Vector2(25, 57)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(37, 8)
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_onrkg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_8erm5")
 animation = &"Die"
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-libraries = {
-&"": SubResource("AnimationLibrary_pu2lt")
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2)
@@ -194,29 +179,11 @@ shape = SubResource("CapsuleShape2D_onrkg")
 position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_i3pqv")
 
-[node name="Attack" type="Area2D" parent="." groups=["P_Attack"]]
-collision_layer = 2
-collision_mask = 2
-script = ExtResource("3_vgqql")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
-light_mask = 2
-visibility_layer = 2
-position = Vector2(31, 0)
-shape = SubResource("RectangleShape2D_onrkg")
-disabled = true
-debug_color = Color(0.99999994, 0.0025855359, 0.093987994, 0.41960785)
-
-[node name="Sprite2D" type="Sprite2D" parent="Attack"]
-visible = false
-light_mask = 2
-visibility_layer = 2
-position = Vector2(23.770342, 1.0743217)
-rotation = 1.5707964
-scale = Vector2(0.5738884, 1.1077667)
-texture = ExtResource("3_i3pqv")
-
 [node name="ItemBag" type="Node2D" parent="."]
+
+[node name="WeaponSlot" type="Node2D" parent="."]
+
+[node name="Fists" parent="WeaponSlot" instance=ExtResource("30_ypfnu")]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

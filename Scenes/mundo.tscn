@@ -50,7 +50,6 @@ rooms = Array[PackedScene]([ExtResource("2_ibak7"), ExtResource("3_7j6if"), ExtR
 dead_ends = Array[PackedScene]([ExtResource("2_amofe"), ExtResource("11_hppdt"), ExtResource("12_rr27p"), ExtResource("13_f3x5k"), ExtResource("17_27nup"), ExtResource("18_r6gbd"), ExtResource("22_mcf1m"), ExtResource("23_84eq0")])
 treasure_rooms = Array[PackedScene]([ExtResource("25_jfclk"), ExtResource("26_fnw41"), ExtResource("27_epo55"), ExtResource("28_1dpdg")])
 shop_rooms = Array[PackedScene]([ExtResource("29_2u6jv"), ExtResource("30_2t8tb")])
-max_rooms = 10
 items = Array[PackedScene]([ExtResource("34_wmopk"), ExtResource("35_b8o3q"), ExtResource("33_lj2jb"), ExtResource("32_epo55"), ExtResource("31_fnw41"), ExtResource("36_wpdun"), ExtResource("37_4tnvf"), ExtResource("38_foomw")])
 
 [node name="Camera2D" type="Camera2D" parent="."]

@@ -1,0 +1,95 @@
+[gd_scene load_steps=7 format=3 uid="uid://ppnq7ppjje35"]
+
+[ext_resource type="Script" uid="uid://d7i7briwbuh4" path="res://Scripts/Armas/fists.gd" id="1_4i76e"]
+[ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="1_75eeb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_parcy"]
+size = Vector2(10, 13.5)
+
+[sub_resource type="Animation" id="Animation_4i76e"]
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_oi7f6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Attack/Sprite2D:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Attack/CollisionShape2D:disabled")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nl0df"]
+_data = {
+&"Attack": SubResource("Animation_4i76e"),
+&"RESET": SubResource("Animation_oi7f6")
+}
+
+[node name="Fists" type="Node2D"]
+
+[node name="Attack" type="Area2D" parent="." groups=["P_Attack"]]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_4i76e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(18, -6.25)
+shape = SubResource("RectangleShape2D_parcy")
+disabled = true
+debug_color = Color(0.98384124, 0.0133939935, 0, 0.41960785)
+
+[node name="Sprite2D" type="Sprite2D" parent="Attack"]
+visible = false
+position = Vector2(18, -6.4999995)
+scale = Vector2(0.6666667, 0.325)
+texture = ExtResource("1_75eeb")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("1_75eeb")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nl0df")
+}

@@ -1,6 +1,7 @@
 extends Area2D
+class_name attack
 
-var damage:= 1.0
+var damage
 var poisonous:= false
 var poison_time:= 0.0
 var freezer:= false

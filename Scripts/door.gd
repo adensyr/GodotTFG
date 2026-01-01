@@ -17,7 +17,6 @@ func _input(event: InputEvent) -> void:
 		else:
 			get_parent().get_parent().cross_door("next")
 
-
 func _on_camera_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("boss"):
 		visible = not visible
