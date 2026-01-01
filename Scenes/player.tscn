@@ -1,68 +1,165 @@
-[gd_scene load_steps=11 format=3 uid="uid://c82wsv3p8cs5s"]
+[gd_scene load_steps=35 format=3 uid="uid://c82wsv3p8cs5s"]
 
 [ext_resource type="Script" uid="uid://csbsfbimiljnq" path="res://Scripts/PlayerMovement.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://bxb5p6hqiusoe" path="res://textures/Stickman Base.png" id="2_onrkg"]
+[ext_resource type="Texture2D" uid="uid://di5ylml4kdr5c" path="res://Animations/Death/Death_0000.png" id="2_0gysh"]
+[ext_resource type="Texture2D" uid="uid://crnit1quvl6xc" path="res://Animations/Fall/Fall_0000.png" id="2_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://jv7tauv5ggap" path="res://Animations/Idle_0000_0000.png" id="2_x3wgy"]
+[ext_resource type="Texture2D" uid="uid://nc0pftssqwf1" path="res://Animations/Start run/Start_run_0000.png" id="3_f1ek2"]
+[ext_resource type="Texture2D" uid="uid://b0tx4nytiycy3" path="res://Animations/Jump/Jump_0000.png" id="3_fd4e3"]
 [ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="3_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://c4tsy3fvnd7s1" path="res://Animations/Fall/Fall_0001.png" id="3_l6n3p"]
+[ext_resource type="Texture2D" uid="uid://dv2tsgloy6aev" path="res://Animations/Run/Running_0000.png" id="3_ukyrk"]
+[ext_resource type="Texture2D" uid="uid://cixadetbfugos" path="res://Animations/Death/Death_0001.png" id="3_vfarp"]
 [ext_resource type="Script" uid="uid://170na24yv501" path="res://Scripts/attack.gd" id="3_vgqql"]
+[ext_resource type="Animation" uid="uid://c7ip8kaul0m3j" path="res://Animations/Attack.res" id="4_3smsa"]
+[ext_resource type="Texture2D" uid="uid://bobw3qyyk1k54" path="res://Animations/Run/Running_0001.png" id="4_7dp3o"]
+[ext_resource type="Texture2D" uid="uid://c0ogqcj1llqny" path="res://Animations/Fall/Fall_0002.png" id="4_olqyp"]
+[ext_resource type="Texture2D" uid="uid://b25mggl5xx35w" path="res://Animations/Jump/Jump_0001.png" id="4_qqcod"]
+[ext_resource type="Texture2D" uid="uid://l0d3xcjknn8y" path="res://Animations/Start run/Start_run_0001.png" id="4_tx1dd"]
+[ext_resource type="Texture2D" uid="uid://dsx41qc7hw5x1" path="res://Animations/Death/Death_0002.png" id="4_y6uwr"]
+[ext_resource type="Texture2D" uid="uid://deun3dtbvbqhn" path="res://Animations/Death/Death_0003.png" id="5_83xs0"]
+[ext_resource type="Texture2D" uid="uid://ca7y8mhhvrnqa" path="res://Animations/Start run/Start_run_0002.png" id="5_gymyn"]
+[ext_resource type="Texture2D" uid="uid://ce47bu6ef5kxb" path="res://Animations/Run/Running_0002.png" id="5_h4iuc"]
+[ext_resource type="Texture2D" uid="uid://cus52uulktny0" path="res://Animations/Jump/Jump_0002.png" id="5_igrcy"]
+[ext_resource type="Texture2D" uid="uid://cjtvx0er5fdok" path="res://Animations/Run/Running_0003.png" id="6_fd4e3"]
+[ext_resource type="Texture2D" uid="uid://ctokruq17kc5k" path="res://Animations/Jump/Jump_0003.png" id="6_fs7ks"]
+[ext_resource type="Texture2D" uid="uid://dqwweexb0u8i1" path="res://Animations/Death/Death_0004.png" id="6_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://cagb8s6ekqpj6" path="res://Animations/Death/Death_0005.png" id="7_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://445xvc12gmcm" path="res://Animations/Damage/Damage_0000.png" id="11_83xs0"]
+[ext_resource type="Texture2D" uid="uid://dglbijwkhpr78" path="res://Animations/Damage/Damage_0001.png" id="12_ypfnu"]
+[ext_resource type="Texture2D" uid="uid://tt0jd607n31m" path="res://Animations/Damage/Damage_0002.png" id="13_xuaoq"]
+[ext_resource type="Texture2D" uid="uid://clke8nkkayewa" path="res://Animations/Damage/Damage_0003.png" id="14_wohnl"]
 
-[sub_resource type="Animation" id="Animation_onrkg"]
-resource_name = "Attack"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Attack/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [true, false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Attack/Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.5),
-"transitions": PackedFloat32Array(1, 1, 1),
-"update": 1,
-"values": [false, true, false]
-}
+[sub_resource type="SpriteFrames" id="SpriteFrames_8erm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_0gysh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vfarp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_y6uwr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_83xs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ypfnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xuaoq")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_fs7ks")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_l6n3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_olqyp")
+}],
+"loop": true,
+"name": &"Fall",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_83xs0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ypfnu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xuaoq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_wohnl")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 9.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_x3wgy")
+}],
+"loop": false,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fd4e3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_qqcod")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_igrcy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fs7ks")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_ukyrk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7dp3o")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_h4iuc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_fd4e3")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_f1ek2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gymyn")
+}],
+"loop": false,
+"name": &"Start_run",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_gymyn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tx1dd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_f1ek2")
+}],
+"loop": false,
+"name": &"Stop_run",
+"speed": 15.0
+}]
 
-[sub_resource type="Animation" id="Animation_i3pqv"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Attack/CollisionShape2D:disabled")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Attack/Sprite2D:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_hqtel"]
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_pu2lt"]
 _data = {
-&"Attack": SubResource("Animation_onrkg"),
-&"RESET": SubResource("Animation_i3pqv")
+&"Attack": ExtResource("4_3smsa")
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_onrkg"]
@@ -78,22 +175,23 @@ size = Vector2(37, 8)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_onrkg")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8erm5")
+animation = &"Die"
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
 libraries = {
-&"": SubResource("AnimationLibrary_hqtel")
+&"": SubResource("AnimationLibrary_pu2lt")
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 1.5)
+position = Vector2(0, -2)
 shape = SubResource("CapsuleShape2D_onrkg")
 
 [node name="Hitbox" type="Area2D" parent="." groups=["player"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
-position = Vector2(-3.5, 1.5)
+position = Vector2(0, -2)
 shape = SubResource("RectangleShape2D_i3pqv")
 
 [node name="Attack" type="Area2D" parent="." groups=["P_Attack"]]
@@ -104,7 +202,7 @@ script = ExtResource("3_vgqql")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(27.5, 1)
+position = Vector2(31, 0)
 shape = SubResource("RectangleShape2D_onrkg")
 disabled = true
 debug_color = Color(0.99999994, 0.0025855359, 0.093987994, 0.41960785)
@@ -120,4 +218,5 @@ texture = ExtResource("3_i3pqv")
 
 [node name="ItemBag" type="Node2D" parent="."]
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="Hitbox" to="." method="_on_hitbox_body_entered"]

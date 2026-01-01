@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmcc44a1dnmmt"]
+[gd_scene load_steps=3 format=3 uid="uid://bmcc44a1dnmmt"]
 
 [ext_resource type="Script" uid="uid://bv6btrs12fs4s" path="res://Scripts/Objetos/rayo.gd" id="1_ayf46"]
+[ext_resource type="Texture2D" uid="uid://c2fadxfjoojje" path="res://textures/items/Rayo.png" id="2_wdhri"]
 
 [node name="Rayo" type="Node2D"]
 script = ExtResource("1_ayf46")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_wdhri")

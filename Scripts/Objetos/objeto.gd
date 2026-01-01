@@ -1,14 +1,12 @@
 extends Node2D
 class_name GameObject
 
-var objetos:= []
+var objetos
 var player
-
-func _ready() -> void:
-	player = get_parent().get_parent()
+var held:= false
 
 func actualizar_bolsa():
-	objetos = get_parent().get_node("ItemBag").get_children()
+	objetos = player.get_node("ItemBag").get_children()
 
 func get_extra_effect():
 	pass

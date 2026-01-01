@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://7pfxjxuvkmkb"]
+[gd_scene load_steps=9 format=3 uid="uid://7pfxjxuvkmkb"]
 
 [ext_resource type="Script" uid="uid://c1irajcabux5" path="res://Scripts/breakable.gd" id="1_pwuh6"]
-[ext_resource type="Texture2D" uid="uid://cjrfuhbyb7gxc" path="res://textures/Espada basica.png" id="2_713dx"]
+[ext_resource type="Texture2D" uid="uid://dynppkot1rrim" path="res://textures/breakables/Silla.png" id="2_8jtrr"]
+[ext_resource type="Texture2D" uid="uid://bg6u1qesfqcxm" path="res://textures/breakables/Mesa.png" id="3_7vfn5"]
 [ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations.res" id="3_713dx"]
-[ext_resource type="Texture2D" uid="uid://cxtgdracfiygg" path="res://textures/flecha atras.png" id="3_uonju"]
+[ext_resource type="Texture2D" uid="uid://813xnl0eht4a" path="res://textures/breakables/Lootables/Caja.png" id="4_jrc0e"]
+[ext_resource type="Texture2D" uid="uid://05p5d6820to1" path="res://textures/breakables/Lootables/Barriles.png" id="5_48lrl"]
+[ext_resource type="Texture2D" uid="uid://dn8bqgot2xh7i" path="res://textures/breakables/Lootables/Caja especial.png" id="6_7vfn5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vblu5"]
 size = Vector2(32, 32)
@@ -12,7 +15,8 @@ size = Vector2(32, 32)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_pwuh6")
-breakables = [ExtResource("2_713dx"), ExtResource("3_uonju")]
+breakables = Array[Texture2D]([ExtResource("2_8jtrr"), ExtResource("3_7vfn5"), ExtResource("4_jrc0e"), ExtResource("5_48lrl")])
+lootables = Array[Texture2D]([ExtResource("5_48lrl"), ExtResource("4_jrc0e"), ExtResource("6_7vfn5")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 

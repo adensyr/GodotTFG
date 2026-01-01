@@ -26,6 +26,7 @@ func _on_body_exited(body: Node2D) -> void:
 
 func _input(event: InputEvent) -> void:
 	if player_inside and item != null and event.is_action_pressed("interact"):
+		item.player = player
 		player.new_item(item)
 		get_node("Item").queue_free()
 

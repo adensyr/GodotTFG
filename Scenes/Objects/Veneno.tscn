@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bp128f41n5hki"]
+[gd_scene load_steps=3 format=3 uid="uid://bp128f41n5hki"]
 
 [ext_resource type="Script" uid="uid://bbe0fujnvflk2" path="res://Scripts/Objetos/veneno.gd" id="1_swgk7"]
+[ext_resource type="Texture2D" uid="uid://dlwci2770g32t" path="res://textures/items/Veneno.png" id="2_jb402"]
 
 [node name="Veneno" type="Node2D"]
 script = ExtResource("1_swgk7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_jb402")

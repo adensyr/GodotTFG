@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://ctdooan1sbcps"]
+[gd_scene load_steps=43 format=3 uid="uid://ctdooan1sbcps"]
 
 [ext_resource type="Script" uid="uid://nyeep5erj1yf" path="res://Scripts/DungeonGen.gd" id="1_6ba58"]
 [ext_resource type="PackedScene" uid="uid://b16yhhle8ibh5" path="res://levels/Level_9.scn" id="2_amofe"]
@@ -35,7 +35,13 @@
 [ext_resource type="PackedScene" uid="uid://bsmcyb516ojs3" path="res://levels/Shop_R.scn" id="30_2t8tb"]
 [ext_resource type="PackedScene" uid="uid://cfnhv0pypa7no" path="res://Scenes/Objects/Fuego.tscn" id="31_fnw41"]
 [ext_resource type="PackedScene" uid="uid://t837h8smue1y" path="res://Scenes/Objects/Escudo.tscn" id="32_epo55"]
+[ext_resource type="PackedScene" uid="uid://d0gooqi51fx4w" path="res://Scenes/Objects/Botas.tscn" id="33_lj2jb"]
 [ext_resource type="PackedScene" uid="uid://c82wsv3p8cs5s" path="res://Scenes/player.tscn" id="34_pl0kk"]
+[ext_resource type="PackedScene" uid="uid://ooqhdx5mdp71" path="res://Scenes/Objects/Botas_cohete.tscn" id="34_wmopk"]
+[ext_resource type="PackedScene" uid="uid://dirvlyqst8f04" path="res://Scenes/Objects/Botas_pincho.tscn" id="35_b8o3q"]
+[ext_resource type="PackedScene" uid="uid://cneh0v2r6q8iy" path="res://Scenes/Objects/Hielo.tscn" id="36_wpdun"]
+[ext_resource type="PackedScene" uid="uid://bmcc44a1dnmmt" path="res://Scenes/Objects/Rayo.tscn" id="37_4tnvf"]
+[ext_resource type="PackedScene" uid="uid://bp128f41n5hki" path="res://Scenes/Objects/Veneno.tscn" id="38_foomw"]
 
 [node name="Mundo" type="Node2D"]
 script = ExtResource("1_6ba58")
@@ -45,7 +51,7 @@ dead_ends = Array[PackedScene]([ExtResource("2_amofe"), ExtResource("11_hppdt"),
 treasure_rooms = Array[PackedScene]([ExtResource("25_jfclk"), ExtResource("26_fnw41"), ExtResource("27_epo55"), ExtResource("28_1dpdg")])
 shop_rooms = Array[PackedScene]([ExtResource("29_2u6jv"), ExtResource("30_2t8tb")])
 max_rooms = 10
-items = Array[PackedScene]([ExtResource("31_fnw41"), ExtResource("32_epo55")])
+items = Array[PackedScene]([ExtResource("34_wmopk"), ExtResource("35_b8o3q"), ExtResource("33_lj2jb"), ExtResource("32_epo55"), ExtResource("31_fnw41"), ExtResource("36_wpdun"), ExtResource("37_4tnvf"), ExtResource("38_foomw")])
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(1.26, 1.26)

@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dirvlyqst8f04"]
+[gd_scene load_steps=3 format=3 uid="uid://dirvlyqst8f04"]
 
 [ext_resource type="Script" uid="uid://n5q7ypbb4ldf" path="res://Scripts/Objetos/botas_pincho.gd" id="1_glc3n"]
+[ext_resource type="Texture2D" uid="uid://dqvcfym6y0ew7" path="res://textures/items/Botas con pinchos.png" id="2_loomt"]
 
 [node name="BotasPincho" type="Node2D"]
 script = ExtResource("1_glc3n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_loomt")
