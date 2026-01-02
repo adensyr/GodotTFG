@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://cvugogat7nl5a"]
+[gd_scene load_steps=4 format=3 uid="uid://cvugogat7nl5a"]
 
 [ext_resource type="Texture2D" uid="uid://35dpafepnexn" path="res://textures/Full pv big.png" id="1_fyqef"]
 [ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations.res" id="2_nf4gj"]
+[ext_resource type="Texture2D" uid="uid://cjm0op5iyqlv" path="res://textures/breakables/Lootables/Moneda.png" id="3_nf4gj"]
 
 [node name="UI" type="CanvasLayer"]
 
@@ -93,9 +94,9 @@ color = Color(0.27450982, 0.27450982, 0.27450982, 1)
 [node name="LabelR" type="Label" parent="ColorRectR"]
 layout_mode = 0
 offset_left = 27.0
-offset_top = 62.0
+offset_top = 83.0
 offset_right = 229.0
-offset_bottom = 131.0
+offset_bottom = 152.0
 theme_override_font_sizes/font_size = 50
 text = "Objetos:"
 
@@ -107,7 +108,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -82.5
-offset_top = -170.0
+offset_top = -150.0
 offset_right = 84.5
 offset_bottom = 284.0
 grow_horizontal = 2
@@ -122,3 +123,23 @@ theme_override_constants/separation = 10
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_constants/separation = 10
+
+[node name="MoneyContainer" type="HBoxContainer" parent="ColorRectR"]
+layout_mode = 0
+offset_left = 105.0
+offset_top = 24.0
+offset_right = 178.0
+offset_bottom = 64.0
+
+[node name="TextureRect" type="TextureRect" parent="ColorRectR/MoneyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("3_nf4gj")
+expand_mode = 2
+
+[node name="Label" type="Label" parent="ColorRectR/MoneyContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 30
+text = "0"

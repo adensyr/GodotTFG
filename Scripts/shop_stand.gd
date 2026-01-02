@@ -6,7 +6,6 @@ func _ready() -> void:
 	var shopTexture = preload("res://textures/items/Shop stand.png")
 	sprite.texture = shopTexture
 
-
 func _input(event: InputEvent) -> void:
 	if player_inside and item != null and event.is_action_pressed("interact"):
 		if player.dinero >= 5:
@@ -14,5 +13,6 @@ func _input(event: InputEvent) -> void:
 			player.new_item(item)
 			get_node("Item").queue_free()
 			player.dinero-=5
+			get_parent().get_parent().get_node("UI/ColorRectR/MoneyContainer/Label").set_text(str(player.dinero))
 		else:
 			print("tu ere pobre tu no tiene aifon")
