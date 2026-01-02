@@ -1,12 +1,11 @@
 extends Node2D
 class_name GameObject
 
-var objetos
 var player
 var held:= false
 
-func actualizar_bolsa():
-	objetos = player.get_node("ItemBag").get_children()
+func buscar_sinergias():
+	pass
 
 func get_extra_effect():
 	pass

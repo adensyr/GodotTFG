@@ -12,3 +12,9 @@ func move(room: Node2D):
 
 func _physics_process(delta: float) -> void:
 	global_position = global_position.lerp(target_pos, delta*transition_speed)
+	
+	#quitar cuando acabe el desarrollo
+	if Input.is_action_just_pressed("Zoom-out"):
+		zoom-=Vector2(0.2,0.2)
+	if Input.is_action_just_pressed("Zoom-in"):
+		zoom+=Vector2(0.2,0.2)

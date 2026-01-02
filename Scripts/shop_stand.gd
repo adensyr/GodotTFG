@@ -10,6 +10,9 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	if player_inside and item != null and event.is_action_pressed("interact"):
 		if player.dinero >= 5:
-			print("comprado")
+			item.player = player
+			player.new_item(item)
+			get_node("Item").queue_free()
+			player.dinero-=5
 		else:
 			print("tu ere pobre tu no tiene aifon")

@@ -84,7 +84,7 @@ func stop_running():
 func new_item(item):
 	var itemBag = get_node("ItemBag")
 	item.held = true
-	item.actualizar_bolsa()
+	item.buscar_sinergias()
 	itemBag.add_child(item)
 	var itemUiBoxes = get_parent().get_node("UI/ColorRectR/HBoxContainer").get_children()
 	var itemTexture = item.get_node("Sprite2D").texture
