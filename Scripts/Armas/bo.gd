@@ -3,4 +3,4 @@ extends attack
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	damage = 1
+	damage = 0.75

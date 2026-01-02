@@ -16,3 +16,6 @@ func change_stats(new_d, new_p, new_pt, new_f, new_ft):
 		freezer = true
 	freeze_time+=new_ft
 	
+
+func atacar():
+	get_parent().get_node("AnimationPlayer").play("Attack")

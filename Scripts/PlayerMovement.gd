@@ -3,7 +3,7 @@ extends CharacterBody2D
 var SPEED = 300.0
 var JUMP_VELOCITY = -550.0
 
-@onready var ani = $WeaponSlot/Fists/AnimationPlayer
+@onready var arma = $WeaponSlot/Fists/Attack
 @onready var aniSprite:= $AnimatedSprite2D
 
 var PVs := 4.0
@@ -31,7 +31,7 @@ func _physics_process(delta: float) -> void:
 			aniSprite.play("Idle")
 		
 		if Input.is_action_just_pressed("ui_text_submit"):
-			ani.play("Attack")
+			arma.atacar()
 		
 		# Handle jump.
 		if Input.is_action_just_pressed("ui_select") and is_on_floor():
@@ -108,7 +108,7 @@ func get_wpn(weapon):
 	slot.get_child(0).free()
 	slot.add_child(weapon)
 	
-	ani = slot.get_child(0).get_node("AnimationPlayer")
+	arma = slot.get_child(0).get_node("Attack")
 	
 	for i in get_node("ItemBag").get_children():
 		i.get_extra_effect()

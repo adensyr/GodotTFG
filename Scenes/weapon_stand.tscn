@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://b4ia1sciuq02j"]
+[gd_scene load_steps=8 format=3 uid="uid://b4ia1sciuq02j"]
 
 [ext_resource type="Script" uid="uid://d0por6x5016xu" path="res://Scripts/weapon_stand.gd" id="1_xxd8k"]
 [ext_resource type="Texture2D" uid="uid://cb35swv7g5u2a" path="res://textures/weapons/Weapon stand.png" id="2_fy1cu"]
-[ext_resource type="PackedScene" uid="uid://et2go50kkr14" path="res://Scenes/Weapons/Espada.tscn" id="2_gnui4"]
+[ext_resource type="PackedScene" uid="uid://bivogj6b8sv62" path="res://Scenes/Weapons/Pistol.tscn" id="2_gnui4"]
 [ext_resource type="PackedScene" uid="uid://t7djvgbijxw1" path="res://Scenes/Weapons/Lanza.tscn" id="3_2b4fc"]
+[ext_resource type="PackedScene" uid="uid://et2go50kkr14" path="res://Scenes/Weapons/Espada.tscn" id="3_14bws"]
 [ext_resource type="PackedScene" uid="uid://dlr52astxha6g" path="res://Scenes/Weapons/Bo.tscn" id="4_firg7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fy1cu"]
@@ -11,7 +12,7 @@ size = Vector2(24, 49)
 
 [node name="Weapon_stand" type="Area2D"]
 script = ExtResource("1_xxd8k")
-weaponList = Array[PackedScene]([ExtResource("2_gnui4"), ExtResource("3_2b4fc"), ExtResource("4_firg7")])
+weaponList = Array[PackedScene]([ExtResource("2_gnui4"), ExtResource("3_14bws"), ExtResource("4_firg7"), ExtResource("3_2b4fc")])
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_fy1cu")

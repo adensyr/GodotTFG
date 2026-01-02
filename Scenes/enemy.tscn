@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_7k104")
 position = Vector2(-0.5, 1)
 shape = SubResource("CircleShape2D_4gyqm")
 
-[node name="Hitbox" type="Area2D" parent="."]
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
 z_index = 50
 z_as_relative = false
 collision_layer = 2

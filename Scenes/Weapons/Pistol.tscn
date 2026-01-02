@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://bivogj6b8sv62"]
+
+[ext_resource type="Script" uid="uid://cde45rb604xad" path="res://Scripts/Armas/pistola.gd" id="1_si21x"]
+[ext_resource type="PackedScene" uid="uid://cv671x0auesmu" path="res://Scenes/Weapons/Bala.tscn" id="2_si21x"]
+[ext_resource type="Texture2D" uid="uid://bg75l5jyuwn7f" path="res://textures/weapons/Pistola.png" id="2_t511x"]
+
+[sub_resource type="Animation" id="Animation_4i76e"]
+length = 0.48
+
+[sub_resource type="Animation" id="Animation_oi7f6"]
+length = 0.001
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_nl0df"]
+_data = {
+&"Attack": SubResource("Animation_4i76e"),
+&"RESET": SubResource("Animation_oi7f6")
+}
+
+[node name="Pistola" type="Node2D"]
+
+[node name="Attack" type="Area2D" parent="."]
+script = ExtResource("1_si21x")
+balaScene = ExtResource("2_si21x")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(18, -4)
+scale = Vector2(1, 0.8392856)
+texture = ExtResource("2_t511x")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_nl0df")
+}
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(23, -5)
