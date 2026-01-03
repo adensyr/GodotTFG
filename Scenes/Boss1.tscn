@@ -1,0 +1,126 @@
+[gd_scene load_steps=17 format=3 uid="uid://cgfhb7o10bfp1"]
+
+[ext_resource type="Script" uid="uid://b7v227ly70upv" path="res://Scripts/boss_1.gd" id="1_0hhhj"]
+[ext_resource type="Texture2D" uid="uid://cw74lqedp6rvp" path="res://Animations/Enemies/Boss1/Idle_0000.png" id="1_db36w"]
+[ext_resource type="Texture2D" uid="uid://dimovdp8jy0j0" path="res://Animations/Enemies/Boss1/Attack/Attack_0000.png" id="2_blipb"]
+[ext_resource type="Texture2D" uid="uid://bv75m50ygruv2" path="res://Animations/Enemies/Boss1/Attack/Attack_0001.png" id="3_8uw0n"]
+[ext_resource type="Texture2D" uid="uid://b1ne10hbula4p" path="res://Animations/Enemies/Boss1/Attack/Attack_0002.png" id="4_6bsff"]
+[ext_resource type="Texture2D" uid="uid://id4mgmrpww6b" path="res://Animations/Enemies/Boss1/Attack/Attack_0003.png" id="5_uj0n1"]
+[ext_resource type="Texture2D" uid="uid://b04mq7hkgjb6y" path="res://Animations/Enemies/Boss1/Attack/Attack_0004.png" id="6_sc2ie"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0hhhj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_blipb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8uw0n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6bsff")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_uj0n1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_sc2ie")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_db36w")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i2pvu"]
+radius = 13.0
+height = 78.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6bsff"]
+size = Vector2(114, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uj0n1"]
+size = Vector2(115, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hhhj"]
+size = Vector2(106, 27)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_blipb"]
+size = Vector2(41, 51)
+
+[sub_resource type="Animation" id="Animation_8uw0n"]
+resource_name = "Attack"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_6bsff"]
+_data = {
+&"Attack": SubResource("Animation_8uw0n")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8uw0n"]
+size = Vector2(27, 79)
+
+[node name="Boss1" type="CharacterBody2D" groups=["boss"]]
+script = ExtResource("1_0hhhj")
+PVs = 1.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0hhhj")
+animation = &"Attack"
+autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_i2pvu")
+
+[node name="DetectionRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(71, -1.5)
+shape = SubResource("RectangleShape2D_6bsff")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(-70.5, -1.5)
+shape = SubResource("RectangleShape2D_uj0n1")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(0, -5.5)
+shape = SubResource("RectangleShape2D_0hhhj")
+debug_color = Color(0, 0.64844894, 0.35483873, 0.41960785)
+
+[node name="Attack" type="Area2D" parent="." groups=["hurt"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(32.5, -17.5)
+shape = SubResource("RectangleShape2D_blipb")
+disabled = true
+debug_color = Color(0.99929637, 0, 0.13122374, 0.41960785)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Attack"]
+libraries = {
+&"": SubResource("AnimationLibrary_6bsff")
+}
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0.5, -1.5)
+shape = SubResource("RectangleShape2D_8uw0n")
+
+[connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
+[connection signal="body_exited" from="DetectionRange" to="." method="_on_detection_range_body_exited"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

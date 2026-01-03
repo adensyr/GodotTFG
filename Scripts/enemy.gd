@@ -1,13 +1,15 @@
 extends CharacterBody2D
+class_name enemy_melee
 
 @onready var aniSprite:= $AnimatedSprite2D
 @onready var ani:= $Attack/AnimationPlayer
+
+@export var PVs:= 3.0
 
 const SPEED = 100.0
 
 var player = null
 var detected = false
-var PVs := 3.0
 var inmune := false
 var poisoned:= false
 var p_time:= 0.0

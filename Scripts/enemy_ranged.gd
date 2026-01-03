@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
+@export var left:= false
+
 @onready var aniSprite:= $AnimatedSprite2D
-#@onready var ani:= $Attack/AnimationPlayer
 
 var player = null
-var detected = false
+var detected = true
 var PVs := 3.0
 var inmune := false
 var poisoned:= false
@@ -18,21 +19,48 @@ var cooldown:= false
 
 func _ready() -> void:
 	player = get_tree().get_nodes_in_group("player")[0]
-	var cameraArea = get_parent().get_node("CameraArea") #hara falta un get_parent si le meto en un enemy spawner
+	var cameraArea = get_parent().get_parent().get_node("CameraArea")
 	cameraArea.connect("body_entered", Callable(self, "_on_camera_area_body_entered"))
 	cameraArea.connect("body_exited", Callable(self, "_on_camera_area_body_exited"))
 
-func _physics_process(_delta: float) -> void:
-	if detected:
-		if not hurt and not dead and not cooldown:
+func _physics_process(delta: float) -> void:
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+	
+	if not hurt and not dead:
+		if poisoned:
+			p_time-=delta
+			if p_time <= 0:
+				poisoned = false
+			else:
+				poison(delta)
+		if froze:
+			f_time-=delta
+			if f_time <= 0:
+				froze = false
+		
+		if detected and not froze and not cooldown:
 			var balaMalaScene = preload("res://Scenes/bala_mala.tscn")
 			var balaMala = balaMalaScene.instantiate()
-			balaMala.global_position = $Marker2D.global_position
+			if left:
+				balaMala.global_position = $MarkerLeft.global_position
+				balaMala.direction = Vector2.LEFT
+				balaMala.get_node("Sprite2D").flip_h = true
+			else:
+				balaMala.global_position = $MarkerRight.global_position
 			get_tree().current_scene.add_child(balaMala)
 			
 			cooldown = true
 			await get_tree().create_timer(2).timeout
 			cooldown = false
+
+func poison(delta):
+	p_tick+=delta
+	if p_tick >= 0.47:
+		p_tick = 0
+		PVs-=0.5
+		if PVs <= 0:
+			queue_free()
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if not inmune and area.is_in_group("P_Attack"):

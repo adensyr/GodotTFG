@@ -104,7 +104,10 @@ collision_mask = 2
 position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_nkvow")
 
-[node name="Marker2D" type="Marker2D" parent="."]
+[node name="MarkerRight" type="Marker2D" parent="."]
 position = Vector2(23, -10)
+
+[node name="MarkerLeft" type="Marker2D" parent="."]
+position = Vector2(-23, -10)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

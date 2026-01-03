@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://obyfvo1xwett" path="res://Scripts/bala_mala.gd" id="1_moux7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n8hvd"]
-size = Vector2(16, 8)
+size = Vector2(12, 6)
 
 [node name="Bala mala" type="Area2D" groups=["hurt"]]
 script = ExtResource("1_moux7")
@@ -13,7 +13,7 @@ script = ExtResource("1_moux7")
 shape = SubResource("RectangleShape2D_n8hvd")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(4, 4)
+scale = Vector2(3, 3)
 texture = ExtResource("1_674ne")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
