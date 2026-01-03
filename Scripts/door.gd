@@ -18,5 +18,5 @@ func _input(event: InputEvent) -> void:
 			get_parent().get_parent().cross_door("next")
 
 func _on_camera_area_area_exited(area: Area2D) -> void:
-	if area.name == "Hitbox":
+	if area.is_in_group("boss") :
 		visible = not visible

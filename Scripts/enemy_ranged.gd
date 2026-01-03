@@ -40,19 +40,27 @@ func _physics_process(delta: float) -> void:
 				froze = false
 		
 		if detected and not froze and not cooldown:
-			var balaMalaScene = preload("res://Scenes/bala_mala.tscn")
-			var balaMala = balaMalaScene.instantiate()
-			if left:
-				balaMala.global_position = $MarkerLeft.global_position
-				balaMala.direction = Vector2.LEFT
-				balaMala.get_node("Sprite2D").flip_h = true
-			else:
-				balaMala.global_position = $MarkerRight.global_position
-			get_tree().current_scene.add_child(balaMala)
+			atacar()
 			
 			cooldown = true
 			await get_tree().create_timer(2).timeout
 			cooldown = false
+	move_and_slide()
+
+func atacar():
+	aniSprite.flip_h = left
+	aniSprite.play("Start attack")
+	await get_tree().create_timer(0.3).timeout
+	aniSprite.play("End attack")
+	var balaMalaScene = preload("res://Scenes/bala_mala.tscn")
+	var balaMala = balaMalaScene.instantiate()
+	if left:
+		balaMala.global_position = $MarkerLeft.global_position
+		balaMala.direction = Vector2.LEFT
+		balaMala.get_node("Sprite2D").flip_h = true
+	else:
+		balaMala.global_position = $MarkerRight.global_position
+	get_tree().current_scene.add_child(balaMala)
 
 func poison(delta):
 	p_tick+=delta
@@ -72,6 +80,7 @@ func get_hit(area: Area2D):
 	if PVs <= 0:
 		dead = true
 		get_node("Hitbox").queue_free()
+		get_node("CollisionShape2D").queue_free()
 		aniSprite.play("Die")
 	else:
 		aniSprite.play("Hurt")

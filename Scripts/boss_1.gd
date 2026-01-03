@@ -37,25 +37,19 @@ func _physics_process(delta: float) -> void:
 		# Add the gravity.
 		if not is_on_floor():
 			velocity += get_gravity()  * delta
-		
-		if level == playerLevel:
-			if detected and not froze:
+		if not stun and not charging and not jumping:
+			if level == playerLevel:
 				var direction = global_position.direction_to(player.global_position).x
-				velocity.x = direction * SPEED
-				start_running(direction)
-			elif not detected and not charging:
-				velocity = Vector2(0,0)
-				stop_running()
-				charge()
-			elif not detected and charging:
-				if is_on_wall():
-					stun = true
-					aniSprite.play("Stun")
-					await get_tree().create_timer(3).timeout
-					stun = false
-		else:
-			if not jumping:
-				jump_to_level()
+				if detected and not froze:
+					velocity.x = direction * SPEED
+					start_running(direction)
+				elif not detected:
+					velocity = Vector2(0,0)
+					stop_running()
+					charge(direction)
+			else:
+				if not jumping:
+					jump_to_level()
 		move_and_slide()
 	elif atacando and not hurt and not dead and not cooldown and not froze:
 			ani.play("Attack")
@@ -64,9 +58,22 @@ func _physics_process(delta: float) -> void:
 			await get_tree().create_timer(1.5).timeout
 			cooldown = false
 
-func charge():
+func charge(direction):
+	aniSprite.flip_h = direction < 0
+	
 	aniSprite.play("Charge")
+	if aniSprite.flip_h:
+		velocity.x = -300
+	else:
+		velocity.x = 300
 	charging = true
+	await get_tree().create_timer(2).timeout
+	charging = false
+	stun = true
+	velocity.x = 0
+	aniSprite.play("Stun")
+	await get_tree().create_timer(3).timeout
+	stun = false
 
 func jump_to_level():
 	jumping = true
@@ -99,6 +106,7 @@ func jump_to_level():
 	jumping = false
 	set_collision_mask_value(1, true)
 	velocity.x = 0
+	aniSprite.play("Idle")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if aniSprite.animation == "Hurt":
@@ -117,14 +125,23 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 func _on_top_body_entered(body):
 	if body.name == "Player":
 		playerLevel = "Top"
+	
+	if body.name == "Boss1":
+		level = "Top"
 
 func _on_mid_body_entered(body):
 	if body.name == "Player":
 		playerLevel = "Mid"
+	
+	if body.name == "Boss1":
+		level = "Mid"
 
 func _on_bot_body_entered(body):
 	if body.name == "Player":
 		playerLevel = "Bot"
+	
+	if body.name == "Boss1":
+		level = "Bot"
 
 func _on_hitbox_area_entered(area: Area2D) -> void:
 	if not inmune and area.is_in_group("P_Attack"):

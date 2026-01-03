@@ -2,13 +2,13 @@ extends Node2D
 
 #cambiar backgound a blanco (Project->Project settings->Rendering->Enviroment)
 
-@export var initial_room: PackedScene
 @export var rooms: Array[PackedScene]
 @export var dead_ends: Array[PackedScene]
 @export var treasure_rooms: Array[PackedScene]
 @export var shop_rooms: Array[PackedScene]
 @export var items: Array[PackedScene]
 
+var initial_room:= load("res://levels/Spawn_level.scn")
 var placed_rooms: Array = []
 var total_rooms: Array = []
 var current_rooms: int
@@ -138,6 +138,7 @@ func cross_door(where):
 				max_rooms+=3
 				seed_used+=1
 				total_rooms = []
+				initial_room = load("res://levels/Spawn_level2.scn")
 				generate()
 			2:
 				get_tree().change_scene_to_file("res://Scenes/end.tscn")

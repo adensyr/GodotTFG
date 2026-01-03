@@ -97,6 +97,7 @@ func get_hit(area: Area2D):
 	if PVs <= 0:
 		dead = true
 		get_node("Hitbox").queue_free()
+		get_node("CollisionShape2D").queue_free()
 		aniSprite.play("Die")
 	else:
 		aniSprite.play("Hurt")

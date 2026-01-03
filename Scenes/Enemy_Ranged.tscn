@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://bpi6vj06xnamt"]
+[gd_scene load_steps=30 format=3 uid="uid://bpi6vj06xnamt"]
 
 [ext_resource type="Texture2D" uid="uid://kmrywi1rpluu" path="res://Animations/Enemies/Melee/Idle_0000.png" id="1_lq8m3"]
 [ext_resource type="Script" uid="uid://tcl6n2ir5y6t" path="res://Scripts/enemy_ranged.gd" id="1_nkvow"]
@@ -9,18 +9,26 @@
 [ext_resource type="Texture2D" uid="uid://w3t0l8l6opm0" path="res://Animations/Enemies/Melee/Death/Death_0004.png" id="6_m57hk"]
 [ext_resource type="Texture2D" uid="uid://cmu0adqo35l4d" path="res://Animations/Enemies/Melee/Death/Death_0005.png" id="7_ptrdb"]
 [ext_resource type="Texture2D" uid="uid://bdoacp41xxevn" path="res://Animations/Enemies/Melee/Death/Death_0006.png" id="8_ravby"]
+[ext_resource type="Texture2D" uid="uid://b7cs0h3kahqnb" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0003.png" id="9_bf17x"]
 [ext_resource type="Texture2D" uid="uid://cdl7ev0jk2qxc" path="res://Animations/Enemies/Melee/Damage/Damage_0000.png" id="9_pvh1u"]
 [ext_resource type="Texture2D" uid="uid://rjqxwu7noll5" path="res://Animations/Enemies/Melee/Damage/Damage_0001.png" id="10_bf17x"]
+[ext_resource type="Texture2D" uid="uid://cx74706h3adx4" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0004.png" id="10_npgv3"]
+[ext_resource type="Texture2D" uid="uid://dnf1clciixlm0" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0005.png" id="11_m3tlr"]
 [ext_resource type="Texture2D" uid="uid://gjwu65w4g0jx" path="res://Animations/Enemies/Melee/Damage/Damage_0002.png" id="11_npgv3"]
+[ext_resource type="Texture2D" uid="uid://eci7v0qn4bf8" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0006.png" id="12_6dv5c"]
 [ext_resource type="Texture2D" uid="uid://jhmtjv0uofhc" path="res://Animations/Enemies/Melee/Damage/Damage_0003.png" id="12_m3tlr"]
+[ext_resource type="Texture2D" uid="uid://h4ca0dt6avgr" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0007.png" id="13_xuo6g"]
+[ext_resource type="Texture2D" uid="uid://dq6xjdbodtm3" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0000.png" id="14_421d5"]
+[ext_resource type="Texture2D" uid="uid://big05i8ttjol2" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0001.png" id="15_m57hk"]
+[ext_resource type="Texture2D" uid="uid://cbm0jper3w7jb" path="res://Animations/Enemies/Ranged/Ranged attack/Ranged attack_0002.png" id="16_ptrdb"]
+[ext_resource type="Texture2D" uid="uid://cq4tqv72j532h" path="res://Animations/Enemies/Ranged/Search/Search_0000.png" id="19_3yx4t"]
+[ext_resource type="Texture2D" uid="uid://d05w4hhn5fbw1" path="res://Animations/Enemies/Ranged/Search/Search_0001.png" id="20_edw6p"]
+[ext_resource type="Texture2D" uid="uid://cs1a6sf6lvji7" path="res://Animations/Enemies/Ranged/Search/Search_0002.png" id="21_huwud"]
+[ext_resource type="Texture2D" uid="uid://r1hc44n0iin3" path="res://Animations/Enemies/Ranged/Search/Search_0003.png" id="22_ag1r7"]
+[ext_resource type="Texture2D" uid="uid://cq2kkr8heu8ck" path="res://Animations/Enemies/Ranged/Search/Search_0004.png" id="23_781xk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nkvow"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"Attack",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_cs274")
@@ -49,6 +57,26 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("9_bf17x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_npgv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_m3tlr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_6dv5c")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_xuo6g")
+}],
+"loop": false,
+"name": &"End attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("9_pvh1u")
 }, {
 "duration": 1.0,
@@ -72,14 +100,43 @@ animations = [{
 "name": &"Idle",
 "speed": 5.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_3yx4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_edw6p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_huwud")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_ag1r7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_781xk")
+}],
 "loop": true,
 "name": &"Search",
-"speed": 5.0
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_421d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_m57hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_ptrdb")
+}],
+"loop": false,
+"name": &"Start attack",
+"speed": 10.0
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkvow"]
-height = 56.0
+height = 54.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nkvow"]
 size = Vector2(20, 55)
@@ -89,8 +146,10 @@ script = ExtResource("1_nkvow")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_nkvow")
-animation = &"Idle"
+animation = &"End attack"
 autoplay = "Idle"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -1)
@@ -105,9 +164,9 @@ position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_nkvow")
 
 [node name="MarkerRight" type="Marker2D" parent="."]
-position = Vector2(23, -10)
+position = Vector2(30, -20)
 
 [node name="MarkerLeft" type="Marker2D" parent="."]
-position = Vector2(-23, -10)
+position = Vector2(-30, -20)
 
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
