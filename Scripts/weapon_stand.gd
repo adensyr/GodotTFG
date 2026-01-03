@@ -28,3 +28,4 @@ func _input(event: InputEvent) -> void:
 	if player_inside and weapon != null and event.is_action_pressed("interact"):
 		player.get_wpn(weapon)
 		get_node("Weapon").queue_free()
+		weapon = null

@@ -23,6 +23,7 @@ script = ExtResource("1_si21x")
 balaScene = ExtResource("2_si21x")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(18, -4)
 scale = Vector2(1, 0.8392856)
 texture = ExtResource("2_t511x")
@@ -33,4 +34,4 @@ libraries = {
 }
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(23, -5)
+position = Vector2(27, -19)

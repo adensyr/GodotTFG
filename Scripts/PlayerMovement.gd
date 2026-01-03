@@ -14,15 +14,16 @@ var startedRun:= false
 var isRun:= false
 var inAir:= false
 var hurt:= false
+var atacando:= false
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	if not hurt:
+	if not hurt and not atacando:
 		if velocity.y > 20: 
 			aniSprite.play("Fall")
-		elif not aniSprite.animation == "Jump":
+		elif not aniSprite.animation == "Jump" and inAir:
 			inAir = false
 		
 		if velocity.y < 20 and velocity.x == 0 and not inAir:
@@ -31,6 +32,8 @@ func _physics_process(delta: float) -> void:
 			aniSprite.play("Idle")
 		
 		if Input.is_action_just_pressed("ui_text_submit"):
+			atacando = true
+			velocity.x = 0
 			arma.atacar()
 		
 		# Handle jump.
@@ -41,14 +44,15 @@ func _physics_process(delta: float) -> void:
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
 		var direction := Input.get_axis("ui_left", "ui_right")
-		if direction:
-			velocity.x = direction * SPEED
-			if (is_on_floor() or velocity.y < 20) and not aniSprite.animation == "Jump":
-				start_running(direction)
-		else:
-			velocity.x = move_toward(velocity.x, 0, SPEED)
-			if velocity.x == 0 and not inAir and isRun:
-					stop_running()
+		if not atacando:
+			if direction:
+				velocity.x = direction * SPEED
+				if (is_on_floor() or velocity.y < 20) and not aniSprite.animation == "Jump":
+					start_running(direction)
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+				if velocity.x == 0 and not inAir and isRun:
+						stop_running()
 		
 	move_and_slide()
 
@@ -75,6 +79,28 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	
 	if aniSprite.animation == "Hurt":
 		hurt = false
+		atacando = false
+	
+	if aniSprite.animation in ["Bo", "Espada", "Lanza", "Fists"]:
+		arma.atacando = false
+		atacando = false
+		aniSprite.play("Idle")
+	
+	if aniSprite.animation == "Guardar pistola":
+		arma.atacando = false
+		atacando = false
+		arma.disparando = false
+		aniSprite.play("Idle")
+	
+	if aniSprite.animation == "Sacar pistola":
+		var balaScene = preload("res://Scenes/Weapons/Bala.tscn")
+		var bala = balaScene.instantiate()
+		if aniSprite.flip_h:
+			bala.direction = Vector2.LEFT
+		bala.global_position = arma.salida.global_position
+		
+		get_tree().current_scene.add_child(bala)
+		aniSprite.play("Guardar pistola")
 
 func stop_running():
 	aniSprite.play("Stop_run")
