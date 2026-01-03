@@ -30,7 +30,6 @@ func _input(event: InputEvent) -> void:
 		item.player = player
 		player.new_item(item)
 		get_node("Item").queue_free()
-		item = null
 
 func _on_camera_area_body_entered(body: Node2D) -> void:
 	if body.name == "Player" and item == null:

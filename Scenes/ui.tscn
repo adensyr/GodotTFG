@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvugogat7nl5a"]
+[gd_scene load_steps=5 format=3 uid="uid://cvugogat7nl5a"]
 
+[ext_resource type="Script" uid="uid://bqq8fu12wcmlp" path="res://Scripts/ui.gd" id="1_2246s"]
 [ext_resource type="Texture2D" uid="uid://35dpafepnexn" path="res://textures/Full pv big.png" id="1_fyqef"]
 [ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations.res" id="2_nf4gj"]
 [ext_resource type="Texture2D" uid="uid://cjm0op5iyqlv" path="res://textures/breakables/Lootables/Moneda.png" id="3_nf4gj"]
 
 [node name="UI" type="CanvasLayer"]
+script = ExtResource("1_2246s")
 
 [node name="ColorRectL" type="ColorRect" parent="."]
 anchors_preset = 9
@@ -143,3 +145,5 @@ size_flags_horizontal = 3
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "0"
+
+[connection signal="gui_input" from="ColorRectR/MoneyContainer/TextureRect" to="." method="_on_texture_rect_gui_input"]

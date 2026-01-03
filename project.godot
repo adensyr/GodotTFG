@@ -27,6 +27,7 @@ version_control/autoload_on_startup=true
 
 P_Attack=""
 hurt=""
+Enemy=""
 
 [input]
 

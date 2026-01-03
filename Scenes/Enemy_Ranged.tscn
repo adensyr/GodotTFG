@@ -1,0 +1,110 @@
+[gd_scene load_steps=17 format=3 uid="uid://bpi6vj06xnamt"]
+
+[ext_resource type="Texture2D" uid="uid://kmrywi1rpluu" path="res://Animations/Enemies/Melee/Idle_0000.png" id="1_lq8m3"]
+[ext_resource type="Script" uid="uid://tcl6n2ir5y6t" path="res://Scripts/enemy_ranged.gd" id="1_nkvow"]
+[ext_resource type="Texture2D" uid="uid://bnvtck3mlk8rr" path="res://Animations/Enemies/Melee/Death/Death_0000.png" id="2_cs274"]
+[ext_resource type="Texture2D" uid="uid://dj0o6p7d0hn0q" path="res://Animations/Enemies/Melee/Death/Death_0001.png" id="3_5ypwy"]
+[ext_resource type="Texture2D" uid="uid://c1h485csj5yn3" path="res://Animations/Enemies/Melee/Death/Death_0002.png" id="4_6jped"]
+[ext_resource type="Texture2D" uid="uid://b8fdepjk70uni" path="res://Animations/Enemies/Melee/Death/Death_0003.png" id="5_421d5"]
+[ext_resource type="Texture2D" uid="uid://w3t0l8l6opm0" path="res://Animations/Enemies/Melee/Death/Death_0004.png" id="6_m57hk"]
+[ext_resource type="Texture2D" uid="uid://cmu0adqo35l4d" path="res://Animations/Enemies/Melee/Death/Death_0005.png" id="7_ptrdb"]
+[ext_resource type="Texture2D" uid="uid://bdoacp41xxevn" path="res://Animations/Enemies/Melee/Death/Death_0006.png" id="8_ravby"]
+[ext_resource type="Texture2D" uid="uid://cdl7ev0jk2qxc" path="res://Animations/Enemies/Melee/Damage/Damage_0000.png" id="9_pvh1u"]
+[ext_resource type="Texture2D" uid="uid://rjqxwu7noll5" path="res://Animations/Enemies/Melee/Damage/Damage_0001.png" id="10_bf17x"]
+[ext_resource type="Texture2D" uid="uid://gjwu65w4g0jx" path="res://Animations/Enemies/Melee/Damage/Damage_0002.png" id="11_npgv3"]
+[ext_resource type="Texture2D" uid="uid://jhmtjv0uofhc" path="res://Animations/Enemies/Melee/Damage/Damage_0003.png" id="12_m3tlr"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nkvow"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cs274")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5ypwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6jped")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_421d5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_m57hk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ptrdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_ravby")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_pvh1u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_bf17x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_npgv3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_m3tlr")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lq8m3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"Search",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_nkvow"]
+height = 56.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nkvow"]
+size = Vector2(20, 55)
+
+[node name="EnemyRanged" type="CharacterBody2D"]
+script = ExtResource("1_nkvow")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_nkvow")
+animation = &"Idle"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("CapsuleShape2D_nkvow")
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
+collision_layer = 2
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -1.5)
+shape = SubResource("RectangleShape2D_nkvow")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(23, -10)
+
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

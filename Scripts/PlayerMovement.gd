@@ -139,8 +139,8 @@ func get_wpn(weapon):
 	for i in get_node("ItemBag").get_children():
 		i.get_extra_effect()
 
-func _on_hitbox_body_entered(body: Node2D) -> void:
-	if not inmune and body.is_in_group("hurt"):
+func _on_hitbox_area_entered(area: Node2D) -> void:
+	if not inmune and area.is_in_group("hurt"):
 		get_hit()
 
 func get_hit():

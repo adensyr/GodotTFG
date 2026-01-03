@@ -1,33 +1,233 @@
-[gd_scene load_steps=6 format=3 uid="uid://b1ai0fdnmufgc"]
+[gd_scene load_steps=36 format=3 uid="uid://b1ai0fdnmufgc"]
 
 [ext_resource type="Script" uid="uid://deia0e415tcbt" path="res://Scripts/enemy.gd" id="1_4gyqm"]
-[ext_resource type="Texture2D" uid="uid://dtkmfg5c5tfi6" path="res://textures/Enemigo Base.png" id="2_4gyqm"]
+[ext_resource type="Texture2D" uid="uid://cf1dt4ob6uvt3" path="res://Animations/Enemies/Melee/Attack/Attack_0000.png" id="2_8cim4"]
+[ext_resource type="Texture2D" uid="uid://bbdbu12wd2nff" path="res://Animations/Enemies/Melee/Attack/Attack_0001.png" id="3_7x82w"]
+[ext_resource type="Texture2D" uid="uid://bijdvvda385tk" path="res://Animations/Enemies/Melee/Attack/Attack_0002.png" id="4_iatxd"]
+[ext_resource type="Texture2D" uid="uid://cc4dsj84fftp8" path="res://Animations/Enemies/Melee/Attack/Attack_0003.png" id="5_qqxsh"]
+[ext_resource type="Texture2D" uid="uid://kyc5supo7ijn" path="res://Animations/Enemies/Melee/Attack/Attack_0004.png" id="6_0whn2"]
+[ext_resource type="Texture2D" uid="uid://bnvtck3mlk8rr" path="res://Animations/Enemies/Melee/Death/Death_0000.png" id="7_bx1xr"]
+[ext_resource type="Texture2D" uid="uid://dj0o6p7d0hn0q" path="res://Animations/Enemies/Melee/Death/Death_0001.png" id="8_n85mp"]
+[ext_resource type="Texture2D" uid="uid://c1h485csj5yn3" path="res://Animations/Enemies/Melee/Death/Death_0002.png" id="9_nxecp"]
+[ext_resource type="Texture2D" uid="uid://b8fdepjk70uni" path="res://Animations/Enemies/Melee/Death/Death_0003.png" id="10_6jaer"]
+[ext_resource type="Texture2D" uid="uid://w3t0l8l6opm0" path="res://Animations/Enemies/Melee/Death/Death_0004.png" id="11_ve8xs"]
+[ext_resource type="Texture2D" uid="uid://cmu0adqo35l4d" path="res://Animations/Enemies/Melee/Death/Death_0005.png" id="12_q0iv8"]
+[ext_resource type="Texture2D" uid="uid://bdoacp41xxevn" path="res://Animations/Enemies/Melee/Death/Death_0006.png" id="13_c1gwg"]
+[ext_resource type="Texture2D" uid="uid://cdl7ev0jk2qxc" path="res://Animations/Enemies/Melee/Damage/Damage_0000.png" id="14_3mxp7"]
+[ext_resource type="Texture2D" uid="uid://rjqxwu7noll5" path="res://Animations/Enemies/Melee/Damage/Damage_0001.png" id="15_5a56t"]
+[ext_resource type="Texture2D" uid="uid://gjwu65w4g0jx" path="res://Animations/Enemies/Melee/Damage/Damage_0002.png" id="16_a6sir"]
+[ext_resource type="Texture2D" uid="uid://jhmtjv0uofhc" path="res://Animations/Enemies/Melee/Damage/Damage_0003.png" id="17_8ej4m"]
+[ext_resource type="Texture2D" uid="uid://kmrywi1rpluu" path="res://Animations/Enemies/Melee/Idle_0000.png" id="18_bwheg"]
+[ext_resource type="Texture2D" uid="uid://c8a2upq25qigv" path="res://Animations/Enemies/Melee/Run/Run_0000.png" id="19_iol0x"]
+[ext_resource type="Texture2D" uid="uid://b1bacx5gnr4yw" path="res://Animations/Enemies/Melee/Run/Run_0001.png" id="20_ofqcr"]
+[ext_resource type="Texture2D" uid="uid://cw85xh0hkwh8t" path="res://Animations/Enemies/Melee/Run/Run_0002.png" id="21_nus6a"]
+[ext_resource type="Texture2D" uid="uid://bx4uju1hf82y7" path="res://Animations/Enemies/Melee/Run/Run_0003.png" id="22_imgxb"]
+[ext_resource type="Texture2D" uid="uid://f5vem00as7i1" path="res://Animations/Enemies/Melee/Start run/Start run_0000.png" id="23_pyrvc"]
+[ext_resource type="Texture2D" uid="uid://bvj7xefpvp6rk" path="res://Animations/Enemies/Melee/Start run/Start run_0001.png" id="24_pja2t"]
+[ext_resource type="Texture2D" uid="uid://wa2gfekskv8c" path="res://Animations/Enemies/Melee/Start run/Start run_0002.png" id="25_jx5vc"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7k104"]
-size = Vector2(23, 57)
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vco5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_8cim4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7x82w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iatxd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_qqxsh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_0whn2")
+}],
+"loop": false,
+"name": &"Attack",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_bx1xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_n85mp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_nxecp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6jaer")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ve8xs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_q0iv8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_c1gwg")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_3mxp7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5a56t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_a6sir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_8ej4m")
+}],
+"loop": false,
+"name": &"Hurt",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_bwheg")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_iol0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ofqcr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_nus6a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_imgxb")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_pyrvc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pja2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_jx5vc")
+}],
+"loop": false,
+"name": &"Start run",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_jx5vc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_pja2t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_pyrvc")
+}],
+"loop": false,
+"name": &"Stop run",
+"speed": 10.0
+}]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_4gyqm"]
-radius = 97.52051
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_8cim4"]
+height = 57.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8cim4"]
+size = Vector2(72, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qqxsh"]
+size = Vector2(72, 61)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iatxd"]
+size = Vector2(48, 41)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4gyqm"]
-size = Vector2(23, 57)
+size = Vector2(20, 55)
 
-[node name="Enemy" type="CharacterBody2D" groups=["hurt"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7x82w"]
+size = Vector2(27, 41)
+
+[sub_resource type="Animation" id="Animation_8cim4"]
+resource_name = "Attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_7x82w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7x82w"]
+_data = {
+&"Attack": SubResource("Animation_8cim4"),
+&"RESET": SubResource("Animation_7x82w")
+}
+
+[node name="Enemy" type="CharacterBody2D"]
 script = ExtResource("1_4gyqm")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.7254902, 0, 0, 1)
-texture = ExtResource("2_4gyqm")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7vco5")
+animation = &"Die"
+autoplay = "Idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-3.5, 1.5)
-shape = SubResource("RectangleShape2D_7k104")
+position = Vector2(0, -1.5)
+shape = SubResource("CapsuleShape2D_8cim4")
 
 [node name="DetectionRange" type="Area2D" parent="."]
 
 [node name="DetectionRangeColision" type="CollisionShape2D" parent="DetectionRange"]
-position = Vector2(-0.5, 1)
-shape = SubResource("CircleShape2D_4gyqm")
+position = Vector2(-60, -4.5)
+shape = SubResource("RectangleShape2D_8cim4")
+
+[node name="DetectionRangeColision2" type="CollisionShape2D" parent="DetectionRange"]
+position = Vector2(60, -4.5)
+shape = SubResource("RectangleShape2D_qqxsh")
+
+[node name="AttackRange" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackRange"]
+position = Vector2(0, -14.5)
+shape = SubResource("RectangleShape2D_iatxd")
+debug_color = Color(0, 0.72105324, 0.17815602, 0.41960785)
 
 [node name="Hitbox" type="Area2D" parent="." groups=["Enemy"]]
 z_index = 50
@@ -38,9 +238,24 @@ collision_mask = 2
 [node name="HitboxCollision" type="CollisionShape2D" parent="Hitbox"]
 light_mask = 2
 visibility_layer = 2
-position = Vector2(-3.5, 1.5)
+position = Vector2(0, -1.5)
 shape = SubResource("RectangleShape2D_4gyqm")
 
+[node name="Attack" type="Area2D" parent="." groups=["hurt"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Attack"]
+position = Vector2(26.5, -14.5)
+shape = SubResource("RectangleShape2D_7x82w")
+disabled = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Attack"]
+libraries = {
+&"": SubResource("AnimationLibrary_7x82w")
+}
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="." method="_on_detection_range_body_exited"]
+[connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]
+[connection signal="body_exited" from="AttackRange" to="." method="_on_attack_range_body_exited"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

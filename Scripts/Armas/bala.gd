@@ -19,5 +19,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	position+= direction * speed * delta
 
-func _on_area_entered(_area: Area2D):
-	queue_free()
+func _on_area_entered(area: Area2D):
+	if area.name == "Hitbox":
+		queue_free()
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.name == "Walls":
+		queue_free()
