@@ -72,6 +72,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		aniSprite.play("Run")
 	
 	if aniSprite.animation == "Jump":
+		$Salto.play()
 		velocity.y = JUMP_VELOCITY
 	
 	if aniSprite.animation == "Die":
@@ -100,6 +101,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 		bala.global_position = arma.salida.global_position
 		
 		get_tree().current_scene.add_child(bala)
+		$Disparo.play()
 		aniSprite.play("Guardar pistola")
 
 func stop_running():
@@ -146,6 +148,7 @@ func _on_hitbox_area_entered(area: Node2D) -> void:
 
 func get_hit():
 	hurt = true
+	$"Daño".play()
 	inmune = true
 	var life_array = get_parent().get_node("UI/ColorRectL/VBoxContainer").get_children()
 	if defended:
@@ -173,4 +176,5 @@ func get_hit():
 
 func die():
 	velocity = Vector2(0,0)
+	$Muerte.play()
 	aniSprite.play("Die")

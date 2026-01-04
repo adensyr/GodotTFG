@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bjaiecdyli0oo"]
+[gd_scene load_steps=8 format=3 uid="uid://bjaiecdyli0oo"]
 
 [ext_resource type="Script" uid="uid://clb807gpv462q" path="res://Scripts/pause_menu.gd" id="1_hdmo1"]
+[ext_resource type="AudioStream" uid="uid://dodxdg4qag4sn" path="res://Sound/Seleccion menu.wav" id="2_k0w1u"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_emv3i"]
 bg_color = Color(0.68235296, 0.60784316, 0.60784316, 1)
@@ -102,6 +103,14 @@ theme_override_styles/read_only = SubResource("StyleBoxFlat_k0w1u")
 alignment = 1
 editable = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_k0w1u")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/Play" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/QuitMenu" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/QuitMenu" to="." method="_on_quit_menu_pressed"]
+[connection signal="mouse_entered" from="ColorRect/VBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="ColorRect/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

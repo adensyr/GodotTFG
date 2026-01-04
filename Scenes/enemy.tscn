@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://b1ai0fdnmufgc"]
+[gd_scene load_steps=37 format=3 uid="uid://b1ai0fdnmufgc"]
 
 [ext_resource type="Script" uid="uid://deia0e415tcbt" path="res://Scripts/enemy.gd" id="1_4gyqm"]
 [ext_resource type="Texture2D" uid="uid://cf1dt4ob6uvt3" path="res://Animations/Enemies/Melee/Attack/Attack_0000.png" id="2_8cim4"]
@@ -25,6 +25,7 @@
 [ext_resource type="Texture2D" uid="uid://f5vem00as7i1" path="res://Animations/Enemies/Melee/Start run/Start run_0000.png" id="23_pyrvc"]
 [ext_resource type="Texture2D" uid="uid://bvj7xefpvp6rk" path="res://Animations/Enemies/Melee/Start run/Start run_0001.png" id="24_pja2t"]
 [ext_resource type="Texture2D" uid="uid://wa2gfekskv8c" path="res://Animations/Enemies/Melee/Start run/Start run_0002.png" id="25_jx5vc"]
+[ext_resource type="AudioStream" uid="uid://xsdx51bnm7hx" path="res://Sound/daño a enemigo.wav" id="26_7x82w"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7vco5"]
 animations = [{
@@ -252,6 +253,9 @@ disabled = true
 libraries = {
 &"": SubResource("AnimationLibrary_7x82w")
 }
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("26_7x82w")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]

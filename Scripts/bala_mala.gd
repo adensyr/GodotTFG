@@ -18,4 +18,5 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.name in ["Walls", "Player"]:
+		$AudioStreamPlayer2D.play()
 		queue_free()

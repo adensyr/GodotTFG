@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://cgfhb7o10bfp1"]
+[gd_scene load_steps=45 format=3 uid="uid://cgfhb7o10bfp1"]
 
 [ext_resource type="Script" uid="uid://b7v227ly70upv" path="res://Scripts/boss_1.gd" id="1_0hhhj"]
 [ext_resource type="Texture2D" uid="uid://cw74lqedp6rvp" path="res://Animations/Enemies/Boss1/Idle_0000.png" id="1_db36w"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://c4d64kncf6kvm" path="res://Animations/Enemies/Boss1/Stun/Stun_0000.png" id="31_ujpbm"]
 [ext_resource type="Texture2D" uid="uid://jaff6otx6jyh" path="res://Animations/Enemies/Boss1/Stun/Stun_0001.png" id="32_3myg5"]
 [ext_resource type="Texture2D" uid="uid://dxocjcuxwchoh" path="res://Animations/Enemies/Boss1/Stun/Stun_0002.png" id="33_7sts5"]
+[ext_resource type="AudioStream" uid="uid://xsdx51bnm7hx" path="res://Sound/daño a enemigo.wav" id="34_3myg5"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0hhhj"]
 animations = [{
@@ -303,6 +304,9 @@ collision_mask = 2
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_8uw0n")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("34_3myg5")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]

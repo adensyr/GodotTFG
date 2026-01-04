@@ -15,3 +15,6 @@ func _on_quit_pressed() -> void:
 func _on_quit_menu_pressed() -> void:
 	get_tree().paused = not get_tree().paused
 	get_tree().change_scene_to_file("res://Scenes/main_menu.tscn")
+
+func _on_button_mouse_entered() -> void:
+	$AudioStreamPlayer.play()

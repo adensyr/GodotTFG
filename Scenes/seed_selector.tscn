@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bhaopel1d20mm"]
+[gd_scene load_steps=3 format=3 uid="uid://bhaopel1d20mm"]
 
 [ext_resource type="Script" uid="uid://wsrgsl8j3jie" path="res://Scripts/seed_selector.gd" id="1_renra"]
+[ext_resource type="AudioStream" uid="uid://dodxdg4qag4sn" path="res://Sound/Seleccion menu.wav" id="2_0an3e"]
 
 [node name="SeedSelector" type="Control"]
 layout_mode = 3
@@ -107,6 +108,14 @@ offset_bottom = 124.0
 theme_override_font_sizes/font_size = 40
 text = "Controles"
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_0an3e")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[connection signal="mouse_entered" from="HBoxContainer/Seed" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/Seed" to="." method="_on_seed_pressed"]
+[connection signal="mouse_entered" from="HBoxContainer/NoSeed" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="HBoxContainer/NoSeed" to="." method="_on_no_seed_pressed"]
+[connection signal="mouse_entered" from="Controls" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="Controls" to="." method="_on_controls_pressed"]

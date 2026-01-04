@@ -129,6 +129,7 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		get_hit(area)
 
 func get_hit(area: Area2D):
+	$AudioStreamPlayer2D.play()
 	var damage = area.damage
 	PVs -= damage
 	if PVs <= 0:

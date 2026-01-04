@@ -2,4 +2,6 @@ extends Control
 
 func _on_back_pressed() -> void:
 	get_tree().change_scene_to_file("res://Scenes/seed_selector.tscn")
-	
+
+func _on_back_mouse_entered() -> void:
+	$AudioStreamPlayer.play()

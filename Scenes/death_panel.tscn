@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://b7e7tsote6nm5"]
+[gd_scene load_steps=6 format=3 uid="uid://b7e7tsote6nm5"]
 
 [ext_resource type="Script" uid="uid://dqc27pep4mvbl" path="res://Scripts/death_panel.gd" id="1_3t5eb"]
+[ext_resource type="AudioStream" uid="uid://dodxdg4qag4sn" path="res://Sound/Seleccion menu.wav" id="2_2aju6"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nwcfo"]
 bg_color = Color(0.68235296, 0.68235296, 0.68235296, 1)
@@ -65,5 +66,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 text = "Has muerto"
 editable = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_2aju6")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[connection signal="mouse_entered" from="VBoxContainer/QuitMenu" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/QuitMenu" to="." method="_on_quit_menu_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

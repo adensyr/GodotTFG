@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://b614j5htprg2n"]
+[gd_scene load_steps=4 format=3 uid="uid://b614j5htprg2n"]
 
 [ext_resource type="Script" uid="uid://c642bydv67jmq" path="res://Scripts/main_menu.gd" id="1_06t4h"]
+[ext_resource type="AudioStream" uid="uid://dodxdg4qag4sn" path="res://Sound/Seleccion menu.wav" id="2_48xlc"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7vrkn"]
 bg_color = Color(0.15611792, 0.12438456, 0.124891885, 1)
@@ -55,5 +56,12 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_7vrkn")
 text = "The StickFather"
 editable = false
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_48xlc")
+volume_db = -15.0
+pitch_scale = 2.0
+
+[connection signal="mouse_entered" from="VBoxContainer/Play" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="VBoxContainer/Quit" to="." method="_on_button_mouse_entered"]
 [connection signal="pressed" from="VBoxContainer/Quit" to="." method="_on_quit_pressed"]

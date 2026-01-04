@@ -76,13 +76,12 @@ func _on_hitbox_area_entered(area: Area2D) -> void:
 		get_hit(area)
 
 func get_hit(area: Area2D):
+	$AudioStreamPlayer2D.play()
 	var damage = area.damage
 	PVs -= damage
 	if PVs <= 0:
 		dead = true
-		process_mode = Node.PROCESS_MODE_DISABLED
 		get_node("Hitbox").queue_free()
-		get_node("CollisionShape2D").queue_free()
 		aniSprite.play("Die")
 	else:
 		aniSprite.play("Hurt")
@@ -110,3 +109,7 @@ func _on_camera_area_body_exited(body):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if aniSprite.animation == "Hurt":
 		hurt = false
+	
+	if aniSprite.animation == "Die":
+		process_mode = Node.PROCESS_MODE_DISABLED
+		get_node("CollisionShape2D").queue_free()

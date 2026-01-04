@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://7pfxjxuvkmkb"]
+[gd_scene load_steps=16 format=3 uid="uid://7pfxjxuvkmkb"]
 
 [ext_resource type="Script" uid="uid://c1irajcabux5" path="res://Scripts/breakable.gd" id="1_pwuh6"]
 [ext_resource type="Texture2D" uid="uid://dynppkot1rrim" path="res://textures/breakables/Silla.png" id="2_8jtrr"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://qasu2lj3qh53" path="res://textures/breakables/Explosion.png" id="7_jrc0e"]
 [ext_resource type="Texture2D" uid="uid://dq7736qdx52mv" path="res://textures/breakables/Madera rota.png" id="8_48lrl"]
 [ext_resource type="Texture2D" uid="uid://d2ro7onv40tu7" path="res://textures/breakables/Lootables/Metal roto.png" id="9_48lrl"]
+[ext_resource type="AudioStream" uid="uid://b21mxdb5jnh16" path="res://Sound/explosion break.wav" id="10_vmy6m"]
 
 [sub_resource type="Animation" id="Animation_vmy6m"]
 length = 0.001
@@ -49,8 +50,8 @@ tracks/2/keys = {
 "values": [Vector2(0, 0)]
 }
 
-[sub_resource type="Animation" id="Animation_48lrl"]
-resource_name = "break(wood)"
+[sub_resource type="Animation" id="Animation_ai3v4"]
+resource_name = "break(metal)"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -62,7 +63,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_jrc0e"), ExtResource("8_48lrl")]
+"values": [ExtResource("7_jrc0e"), ExtResource("9_48lrl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -89,8 +90,8 @@ tracks/2/keys = {
 "values": [Vector2(0, 8)]
 }
 
-[sub_resource type="Animation" id="Animation_ai3v4"]
-resource_name = "break(metal)"
+[sub_resource type="Animation" id="Animation_48lrl"]
+resource_name = "break(wood)"
 length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
@@ -102,7 +103,7 @@ tracks/0/keys = {
 "times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 1,
-"values": [ExtResource("7_jrc0e"), ExtResource("9_48lrl")]
+"values": [ExtResource("7_jrc0e"), ExtResource("8_48lrl")]
 }
 tracks/1/type = "value"
 tracks/1/imported = false
@@ -157,5 +158,8 @@ libraries = {
 light_mask = 2
 visibility_layer = 2
 shape = SubResource("RectangleShape2D_vblu5")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_vmy6m")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

@@ -16,6 +16,7 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if not broken and area.is_in_group("P_Attack"):
+		$AudioStreamPlayer2D.play()
 		var a = get_node("Sprite2D").get_texture().resource_path
 		if a == "res://textures/breakables/Lootables/Barriles.png":
 			ani.play("break(metal)")

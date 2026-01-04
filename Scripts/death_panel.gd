@@ -5,3 +5,6 @@ func _on_quit_menu_pressed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
+
+func _on_button_mouse_entered() -> void:
+	$AudioStreamPlayer.play()

@@ -92,6 +92,7 @@ func _on_attack_range_body_exited(body: Node2D) -> void:
 		atacando = false
 
 func get_hit(area: Area2D):
+	$AudioStreamPlayer2D.play()
 	var damage = area.damage
 	PVs -= damage
 	if PVs <= 0:
