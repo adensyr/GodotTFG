@@ -1,12 +1,140 @@
-[gd_scene load_steps=9 format=3 uid="uid://7pfxjxuvkmkb"]
+[gd_scene load_steps=15 format=3 uid="uid://7pfxjxuvkmkb"]
 
 [ext_resource type="Script" uid="uid://c1irajcabux5" path="res://Scripts/breakable.gd" id="1_pwuh6"]
 [ext_resource type="Texture2D" uid="uid://dynppkot1rrim" path="res://textures/breakables/Silla.png" id="2_8jtrr"]
 [ext_resource type="Texture2D" uid="uid://bg6u1qesfqcxm" path="res://textures/breakables/Mesa.png" id="3_7vfn5"]
-[ext_resource type="AnimationLibrary" uid="uid://cviliidpbnw3a" path="res://Animations/UIAnimations.res" id="3_713dx"]
 [ext_resource type="Texture2D" uid="uid://813xnl0eht4a" path="res://textures/breakables/Lootables/Caja.png" id="4_jrc0e"]
 [ext_resource type="Texture2D" uid="uid://05p5d6820to1" path="res://textures/breakables/Lootables/Barriles.png" id="5_48lrl"]
 [ext_resource type="Texture2D" uid="uid://dn8bqgot2xh7i" path="res://textures/breakables/Lootables/Caja especial.png" id="6_7vfn5"]
+[ext_resource type="Texture2D" uid="uid://qasu2lj3qh53" path="res://textures/breakables/Explosion.png" id="7_jrc0e"]
+[ext_resource type="Texture2D" uid="uid://dq7736qdx52mv" path="res://textures/breakables/Madera rota.png" id="8_48lrl"]
+[ext_resource type="Texture2D" uid="uid://d2ro7onv40tu7" path="res://textures/breakables/Lootables/Metal roto.png" id="9_48lrl"]
+
+[sub_resource type="Animation" id="Animation_vmy6m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_48lrl"]
+resource_name = "break(wood)"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7_jrc0e"), ExtResource("8_48lrl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+
+[sub_resource type="Animation" id="Animation_ai3v4"]
+resource_name = "break(metal)"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("7_jrc0e"), ExtResource("9_48lrl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5, 2),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1), Vector2(0.8, 0.8), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [Vector2(0, 8)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ai3v4"]
+_data = {
+&"RESET": SubResource("Animation_vmy6m"),
+&"break(metal)": SubResource("Animation_ai3v4"),
+&"break(wood)": SubResource("Animation_48lrl")
+}
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vblu5"]
 size = Vector2(32, 32)
@@ -22,7 +150,7 @@ lootables = Array[Texture2D]([ExtResource("5_48lrl"), ExtResource("4_jrc0e"), Ex
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
 libraries = {
-&"UIAnimations": ExtResource("3_713dx")
+&"": SubResource("AnimationLibrary_ai3v4")
 }
 
 [node name="Hitbox" type="CollisionShape2D" parent="."]

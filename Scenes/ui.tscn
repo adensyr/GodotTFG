@@ -136,6 +136,7 @@ offset_bottom = 66.0
 [node name="TextureRect" type="TextureRect" parent="ColorRectR/MoneyContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
+tooltip_text = "Monedas"
 texture = ExtResource("3_nf4gj")
 expand_mode = 2
 

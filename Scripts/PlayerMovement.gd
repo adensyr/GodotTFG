@@ -117,6 +117,7 @@ func new_item(item):
 	var textureRect:= TextureRect.new()
 	textureRect.set_expand_mode(4 as TextureRect.ExpandMode)
 	textureRect.set_texture(itemTexture)
+	textureRect.set_tooltip_text(item.tooltip)
 	if (itemBag.get_children().size() % 2) == 0:
 		itemUiBoxes[0].add_child(textureRect)
 	else:

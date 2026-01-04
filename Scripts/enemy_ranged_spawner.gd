@@ -6,6 +6,7 @@ extends Marker2D
 var spawned := false
 
 func spawn():
+	spawned = true
 	var enemy_instance = Enemy.instantiate()
 	enemy_instance.left = left
 	call_deferred("add_child", enemy_instance)

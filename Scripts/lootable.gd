@@ -15,7 +15,11 @@ func _ready() -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	if not broken and area.is_in_group("P_Attack"):
-		ani.play("UIAnimations/LoseHalfPV2") #substituir por animacion de romper
+		var a = get_node("Sprite2D").get_texture().resource_path
+		if a in ["res://textures/breakables/Lootables/Barriles.png", "res://textures/breakables/Lootables/Caja especial.png"]:
+			ani.play("break(metal)")
+		else:
+			ani.play("break(wood)")
 		broken = true
 		for i in money:
 			throw_loot()

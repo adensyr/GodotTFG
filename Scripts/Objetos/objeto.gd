@@ -3,6 +3,7 @@ class_name GameObject
 
 var player
 var held:= false
+var tooltip
 
 func buscar_sinergias():
 	pass

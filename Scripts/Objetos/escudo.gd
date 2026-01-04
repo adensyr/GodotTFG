@@ -6,6 +6,9 @@ var veneno:= false
 var rayo:= false
 var botasPincho:= false
 
+func _ready() -> void:
+	tooltip = "Esto te hará recibir menos daño"
+
 func buscar_sinergias():
 	var objetos = player.get_node("ItemBag").get_children()
 	for o in objetos:
