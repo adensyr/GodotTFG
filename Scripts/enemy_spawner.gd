@@ -1,8 +1,6 @@
 extends Marker2D
 
 @onready var Enemy = load("res://Scenes/enemy.tscn")
-@onready var Boss1 = load("res://Scenes/Boss1.tscn")
-#@onready var Boss2 = load("res://Scenes/Boss2.tscn")
 var spawned := false
 
 func choose_spawn(enemy_count):
@@ -17,10 +15,11 @@ func choose_spawn(enemy_count):
 func spawn():
 	var enemy_instance = null
 	if get_parent().name == "Boss1":
+		var Boss1 = load("res://Scenes/Boss1.tscn")
 		enemy_instance = Boss1.instantiate()
 	elif get_parent().name == "Boss2":
-		enemy_instance = Enemy.instantiate() #cambiar enemy por boss 2
-		enemy_instance.add_to_group("boss") #eliminar cuando se creen los bosses porque ya lo tendran
+		var Boss2 = load("res://Scenes/Boss2.tscn")
+		enemy_instance = Boss2.instantiate()
 		print("boss2")
 	else:
 		enemy_instance = Enemy.instantiate()

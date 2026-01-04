@@ -27,10 +27,10 @@ color = Color(0.0619267, 0.0619267, 0.061926693, 1)
 
 [node name="TextEdit" type="TextEdit" parent="."]
 layout_mode = 0
-offset_left = 407.0
-offset_top = 68.0
-offset_right = 738.12524
-offset_bottom = 182.0
+offset_left = 408.99997
+offset_top = 39.0
+offset_right = 740.12524
+offset_bottom = 153.0
 rotation = 0.05235988
 theme_override_colors/font_readonly_color = Color(0, 0, 0, 0.88235295)
 theme_override_font_sizes/font_size = 70
@@ -40,12 +40,14 @@ editable = false
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_left = 188.0
-offset_top = 252.0
-offset_right = 449.0
-offset_bottom = 579.0
-theme_override_font_sizes/font_size = 35
-text = "Movimiento
+offset_left = 193.0
+offset_top = 214.0
+offset_right = 514.0
+offset_bottom = 679.0
+theme_override_font_sizes/font_size = 30
+text = "Movimiento lateral
+
+Salto
 
 Ataque
 
@@ -55,14 +57,16 @@ Interactuar"
 
 [node name="Label2" type="Label" parent="."]
 layout_mode = 0
-offset_left = 701.0
-offset_top = 252.0
-offset_right = 962.0
-offset_bottom = 579.0
-theme_override_font_sizes/font_size = 35
-text = "Flechas
+offset_left = 675.0
+offset_top = 214.0
+offset_right = 1002.0
+offset_bottom = 616.0
+theme_override_font_sizes/font_size = 30
+text = "Flechas o A/D
 
-Intro
+Espacio o flecha arriba
+
+Clic izq. o Z
 
 Escape
 
@@ -70,10 +74,10 @@ E"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 0
-offset_left = 147.0
-offset_top = 93.0
-offset_right = 205.0
-offset_bottom = 153.0
+offset_left = 149.0
+offset_top = 74.0
+offset_right = 207.0
+offset_bottom = 134.0
 icon = ExtResource("2_e8c2f")
 flat = true
 

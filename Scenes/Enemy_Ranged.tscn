@@ -169,4 +169,5 @@ position = Vector2(30, -20)
 [node name="MarkerLeft" type="Marker2D" parent="."]
 position = Vector2(-30, -20)
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]

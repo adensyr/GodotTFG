@@ -10,7 +10,7 @@ var PVs := 3.0
 var inmune := false
 var poisoned:= false
 var p_time:= 0.0
-var froze:= false #cuando añada los ataques debo tambien pararlos
+var froze:= false
 var f_time:= 0.0
 var p_tick = 0.0
 var hurt:= false
@@ -51,16 +51,17 @@ func atacar():
 	aniSprite.flip_h = left
 	aniSprite.play("Start attack")
 	await get_tree().create_timer(0.3).timeout
-	aniSprite.play("End attack")
-	var balaMalaScene = preload("res://Scenes/bala_mala.tscn")
-	var balaMala = balaMalaScene.instantiate()
-	if left:
-		balaMala.global_position = $MarkerLeft.global_position
-		balaMala.direction = Vector2.LEFT
-		balaMala.get_node("Sprite2D").flip_h = true
-	else:
-		balaMala.global_position = $MarkerRight.global_position
-	get_tree().current_scene.add_child(balaMala)
+	if not dead:
+		aniSprite.play("End attack")
+		var balaMalaScene = preload("res://Scenes/bala_mala.tscn")
+		var balaMala = balaMalaScene.instantiate()
+		if left:
+			balaMala.global_position = $MarkerLeft.global_position
+			balaMala.direction = Vector2.LEFT
+			balaMala.get_node("Sprite2D").flip_h = true
+		else:
+			balaMala.global_position = $MarkerRight.global_position
+		get_tree().current_scene.add_child(balaMala)
 
 func poison(delta):
 	p_tick+=delta
@@ -79,6 +80,7 @@ func get_hit(area: Area2D):
 	PVs -= damage
 	if PVs <= 0:
 		dead = true
+		process_mode = Node.PROCESS_MODE_DISABLED
 		get_node("Hitbox").queue_free()
 		get_node("CollisionShape2D").queue_free()
 		aniSprite.play("Die")
@@ -108,6 +110,3 @@ func _on_camera_area_body_exited(body):
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if aniSprite.animation == "Hurt":
 		hurt = false
-	
-	if aniSprite.animation == "Die":
-		process_mode = Node.PROCESS_MODE_DISABLED

@@ -11,15 +11,15 @@ script = ExtResource("1_2246s")
 [node name="ColorRectL" type="ColorRect" parent="."]
 anchors_preset = 9
 anchor_bottom = 1.0
-offset_right = 251.0
+offset_right = 240.0
 grow_vertical = 2
 color = Color(0.27450982, 0.27450982, 0.27450982, 1)
 
 [node name="LabelL" type="Label" parent="ColorRectL"]
 layout_mode = 0
-offset_left = 76.0
+offset_left = 71.0
 offset_top = 45.0
-offset_right = 176.0
+offset_right = 171.0
 offset_bottom = 114.0
 theme_override_font_sizes/font_size = 50
 text = "PVs:"
@@ -88,17 +88,17 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -251.0
+offset_left = -244.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.27450982, 0.27450982, 0.27450982, 1)
 
 [node name="LabelR" type="Label" parent="ColorRectR"]
 layout_mode = 0
-offset_left = 27.0
-offset_top = 83.0
-offset_right = 229.0
-offset_bottom = 152.0
+offset_left = 22.0
+offset_top = 86.0
+offset_right = 224.0
+offset_bottom = 155.0
 theme_override_font_sizes/font_size = 50
 text = "Objetos:"
 
@@ -128,10 +128,10 @@ theme_override_constants/separation = 10
 
 [node name="MoneyContainer" type="HBoxContainer" parent="ColorRectR"]
 layout_mode = 0
-offset_left = 105.0
+offset_left = 88.0
 offset_top = 24.0
-offset_right = 178.0
-offset_bottom = 64.0
+offset_right = 151.0
+offset_bottom = 66.0
 
 [node name="TextureRect" type="TextureRect" parent="ColorRectR/MoneyContainer"]
 layout_mode = 2

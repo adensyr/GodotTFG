@@ -31,19 +31,19 @@ func _physics_process(delta: float) -> void:
 			isRun = false
 			aniSprite.play("Idle")
 		
-		if Input.is_action_just_pressed("ui_text_submit"):
+		if Input.is_action_just_pressed("Attack"):
 			atacando = true
 			velocity.x = 0
 			arma.atacar()
 		
 		# Handle jump.
-		if Input.is_action_just_pressed("ui_select") and is_on_floor():
+		if Input.is_action_just_pressed("Jump") and is_on_floor():
 			inAir = true
 			aniSprite.play("Jump")
 
 		# Get the input direction and handle the movement/deceleration.
 		# As good practice, you should replace UI actions with custom gameplay actions.
-		var direction := Input.get_axis("ui_left", "ui_right")
+		var direction := Input.get_axis("Move left", "Move right")
 		if not atacando:
 			if direction:
 				velocity.x = direction * SPEED

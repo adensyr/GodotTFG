@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://cgfhb7o10bfp1"]
+[gd_scene load_steps=44 format=3 uid="uid://cgfhb7o10bfp1"]
 
 [ext_resource type="Script" uid="uid://b7v227ly70upv" path="res://Scripts/boss_1.gd" id="1_0hhhj"]
 [ext_resource type="Texture2D" uid="uid://cw74lqedp6rvp" path="res://Animations/Enemies/Boss1/Idle_0000.png" id="1_db36w"]
@@ -213,10 +213,39 @@ size = Vector2(41, 51)
 
 [sub_resource type="Animation" id="Animation_8uw0n"]
 resource_name = "Attack"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.05, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="Animation" id="Animation_ujpbm"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CollisionShape2D:disabled")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_6bsff"]
 _data = {
-&"Attack": SubResource("Animation_8uw0n")
+&"Attack": SubResource("Animation_8uw0n"),
+&"RESET": SubResource("Animation_ujpbm")
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8uw0n"]
@@ -275,6 +304,7 @@ collision_mask = 2
 position = Vector2(1, -2)
 shape = SubResource("RectangleShape2D_8uw0n")
 
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="body_entered" from="DetectionRange" to="." method="_on_detection_range_body_entered"]
 [connection signal="body_exited" from="DetectionRange" to="." method="_on_detection_range_body_exited"]
 [connection signal="body_entered" from="AttackRange" to="." method="_on_attack_range_body_entered"]

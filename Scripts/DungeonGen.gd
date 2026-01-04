@@ -127,6 +127,7 @@ func cross_door(where):
 		match level:
 			1:
 				boss_pre = preload("res://levels/Boss1.scn")
+				#boss_pre = preload("res://levels/Boss2.scn")
 			2:
 				boss_pre = preload("res://levels/Boss2.scn")
 		var boss = boss_pre.instantiate()

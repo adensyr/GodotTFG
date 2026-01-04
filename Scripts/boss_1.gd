@@ -67,13 +67,14 @@ func charge(direction):
 	else:
 		velocity.x = 300
 	charging = true
-	await get_tree().create_timer(2).timeout
-	charging = false
-	stun = true
-	velocity.x = 0
-	aniSprite.play("Stun")
-	await get_tree().create_timer(3).timeout
-	stun = false
+	await get_tree().create_timer(1).timeout
+	if not dead:
+		charging = false
+		stun = true
+		velocity.x = 0
+		aniSprite.play("Stun")
+		await get_tree().create_timer(3).timeout
+		stun = false
 
 func jump_to_level():
 	jumping = true
@@ -114,6 +115,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	
 	if aniSprite.animation == "Start run":
 		aniSprite.play("Run")
+	
+	if aniSprite.animation == "Attack":
+		aniSprite.play("Idle")
 	
 	if aniSprite.animation == "Die":
 		process_mode = Node.PROCESS_MODE_DISABLED

@@ -1,0 +1,187 @@
+[gd_scene load_steps=30 format=3 uid="uid://dv0o433j4hrpq"]
+
+[ext_resource type="Script" uid="uid://bab5fljr4usqc" path="res://Scripts/boss_2.gd" id="1_8w52q"]
+[ext_resource type="Texture2D" uid="uid://b3qlwwe586061" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0003.png" id="2_kmaow"]
+[ext_resource type="Texture2D" uid="uid://clslvb0w0y773" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0004.png" id="3_7luu5"]
+[ext_resource type="Texture2D" uid="uid://dstgwbylwn864" path="res://Animations/Enemies/Boss 2/Death/Death_0000.png" id="3_87a1g"]
+[ext_resource type="Texture2D" uid="uid://cfrf43gcyd711" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0005.png" id="4_dsnyp"]
+[ext_resource type="Texture2D" uid="uid://b7m52qkruvbr" path="res://Animations/Enemies/Boss 2/Death/Death_0001.png" id="4_xp04p"]
+[ext_resource type="Texture2D" uid="uid://bwf6mu6h6j2p2" path="res://Animations/Enemies/Boss 2/Death/Death_0002.png" id="5_l6h5k"]
+[ext_resource type="Texture2D" uid="uid://dhu4h0b4ypl5u" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0006.png" id="5_yui0s"]
+[ext_resource type="Texture2D" uid="uid://ccyr3wwib8g0q" path="res://Animations/Enemies/Boss 2/Death/Death_0003.png" id="6_b18al"]
+[ext_resource type="Texture2D" uid="uid://2otkhfgl6op3" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0007.png" id="6_vdq7j"]
+[ext_resource type="Texture2D" uid="uid://e6sewrigrxu8" path="res://Animations/Enemies/Boss 2/Idle_0000.png" id="7_gnpsw"]
+[ext_resource type="Texture2D" uid="uid://cf1tewrefrv0f" path="res://Animations/Enemies/Boss 2/Death/Death_0004.png" id="7_yxu6k"]
+[ext_resource type="Texture2D" uid="uid://ck3m8an73an5b" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0000.png" id="8_4h5q8"]
+[ext_resource type="Texture2D" uid="uid://jvecn2v7rgwt" path="res://Animations/Enemies/Boss 2/Death/Death_0005.png" id="8_qcllh"]
+[ext_resource type="Texture2D" uid="uid://cgjifx7t3muas" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0001.png" id="9_44u1j"]
+[ext_resource type="Texture2D" uid="uid://t0ap447k126u" path="res://Animations/Enemies/Boss 2/Death/Death_0006.png" id="9_fryr5"]
+[ext_resource type="Texture2D" uid="uid://83ymmaln5c7k" path="res://Animations/Enemies/Boss 2/Ranged attack/Ranged attack_0002.png" id="10_74uqe"]
+[ext_resource type="Texture2D" uid="uid://ct5nyihd1bcpr" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0000.png" id="11_7ixc4"]
+[ext_resource type="Texture2D" uid="uid://bsxcd03h2ufsh" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0001.png" id="12_mal2u"]
+[ext_resource type="Texture2D" uid="uid://dyotown5u0hd8" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0002.png" id="13_r7jw8"]
+[ext_resource type="Texture2D" uid="uid://dt217qbgf7xse" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0003.png" id="14_8wq1i"]
+[ext_resource type="Texture2D" uid="uid://bh2fv61g0igpk" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0004.png" id="15_l4k0m"]
+[ext_resource type="Texture2D" uid="uid://cdyj2dj8fvhv0" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0005.png" id="16_5jlqd"]
+[ext_resource type="Texture2D" uid="uid://dkdptcu6jvf4s" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0006.png" id="17_a7e8t"]
+[ext_resource type="Texture2D" uid="uid://c0xbw1rdbvi1i" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0007.png" id="18_7k7av"]
+[ext_resource type="Texture2D" uid="uid://cns6gfkyfod5x" path="res://Animations/Enemies/Boss 2/Teleport/Teleport_0008.png" id="19_osaeb"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8w52q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_87a1g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_xp04p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_l6h5k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_b18al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_yxu6k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_qcllh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_fryr5")
+}],
+"loop": false,
+"name": &"Die",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kmaow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7luu5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_dsnyp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_yui0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_vdq7j")
+}],
+"loop": false,
+"name": &"End attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_gnpsw")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_4h5q8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_44u1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_74uqe")
+}],
+"loop": false,
+"name": &"Start attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_7ixc4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_mal2u")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_r7jw8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8wq1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_l4k0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5jlqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a7e8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7k7av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_osaeb")
+}],
+"loop": false,
+"name": &"Teleport",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_osaeb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_7k7av")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_a7e8t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5jlqd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_l4k0m")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_8wq1i")
+}],
+"loop": false,
+"name": &"Teleport down",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_gfy8a"]
+radius = 12.0
+height = 74.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w52q"]
+size = Vector2(24, 78)
+
+[node name="Boss2" type="CharacterBody2D" groups=["boss"]]
+script = ExtResource("1_8w52q")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8w52q")
+animation = &"Die"
+autoplay = "Idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_gfy8a")
+
+[node name="MarkerLeft" type="Marker2D" parent="."]
+
+[node name="MarkerRight" type="Marker2D" parent="."]
+
+[node name="Hitbox" type="Area2D" parent="." groups=["Enemy", "boss"]]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_8w52q")
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="area_entered" from="Hitbox" to="." method="_on_hitbox_area_entered"]
